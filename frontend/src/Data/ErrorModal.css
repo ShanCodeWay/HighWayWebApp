@@ -1,0 +1,78 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  
+  .lottie-animation {
+    width: 100%;
+    max-height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .error-modal-title {
+    color: rgb(230, 83, 20);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .modal-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-close {
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 200ms;
+  }
+  
+  .modal-close:hover {
+    background-color: #999999;
+  }
+  
+  .modal-enter {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  
+  .modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .modal-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .modal-exit-active {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
