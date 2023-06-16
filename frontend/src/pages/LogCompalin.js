@@ -1,6 +1,6 @@
 import React, { useEffect, useState,useRef } from 'react';
 import axios from 'axios';
-
+import './css/log.css';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -507,9 +507,9 @@ const toggleComplaint = (complaintId) => {
         </main>
         </div>
         <div className="right-column">
-        <div className="datetime-container">
-                  <span className="date-text">{formatDate(dateTime)}</span>
-                  <span className="time-text">{formatTime(dateTime)}</span>
+        <div className="log-datetime-container">
+                  <span className="log-date-text">{formatDate(dateTime)}</span>
+                  <span className="log-time-text">{formatTime(dateTime)}</span>
                 </div>
         
                 <div className="search-container">
@@ -575,9 +575,7 @@ const toggleComplaint = (complaintId) => {
     Next
   </button>
 </div>
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
+    
   </>
 );
 

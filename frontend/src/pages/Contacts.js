@@ -1,41 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './css/Complain.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook,faHome, faComments, faList, faBars, faTimes, faAngleDown, faAngleUp, faTrashAlt, faExclamationTriangle, faSync  } from '@fortawesome/free-solid-svg-icons';
-import logoImage from '../assets/images/logo.png';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ErrorModal from "../Data/ErrorModal.js";
-import SuccessModal from "../Data/SuccessModal.js";
-import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
-
-
-
+import './css/Contacts.css';
+import ContactModal from '../Data/component/ContactModal.js';
+import contactsData from '../Data/details/en_contact_details';
+import { FaPlus, FaMinus, FaSearch } from 'react-icons/fa';
 
 
 const Contacts= () => {
  
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorVisible, setErrorVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successVisible, setSuccessVisible] = useState(false);
-  
-  const [key, setKey] = useState('');
-  
-  const [dateTime, setDateTime] = useState(new Date());
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const [isProfileDrawerOpen, setIsProfileDrawerOpen] = useState(false);
-
  
-  const handleProfileDrawerClick = () => {
-    setIsProfileDrawerOpen(!isProfileDrawerOpen);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [dateTime, setDateTime] = useState(new Date());
+
+
+
+  const filteredContacts = contactsData.filter((contact) => {
+    const { name, phone } = contact;
+    const searchTerm = searchQuery.toLowerCase();
+    return name.toLowerCase().includes(searchTerm) || phone.includes(searchTerm);
+  });
+
+  // Open modal to view contact details
+  const openModal = (contact) => {
+    setSelectedContact(contact);
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setSelectedContact(null);
   };
  
   useEffect(() => {
@@ -61,77 +55,56 @@ const Contacts= () => {
 
  
 
-    const handleModalClose = () => {
-      setSuccessVisible(false);
-      setKey('');
-    };
-
+   
 
 
       return (
         <>
        
 
-
+        <div className="contacts-container">
      
 
-     
-      <div className="complain-container">
-      
-     
-
-
-      
-
-
-
-
-
-     
-      <div className={`ProfileDrawer ${isProfileDrawerOpen ? 'open' : 'close'}`}>
-  <ul>
-    <li>Account</li>
-    <li>Profile</li>
-    <li>Sign In</li>
-    <li>Sign Up</li>
-  </ul>
-</div>
-
-<div className={`drawer-menu ${isDrawerOpen ? 'open' : 'close'}`}>
-  <ul>
-    <li>Instruction</li>
-    <li>Contact Numbers</li>
-    <li>Details of Operators</li>
-    <li>Events</li>
-  </ul>
-</div>
-
-
-        <div className='complaint-left' >
-
-        <h2>MobileApp page</h2>
-        <p>This is MobileApp page</p>
-
-        </div>
-
-       
-
-       
+      <div className="contacts-grid">
+        {filteredContacts.map((contact) => (
+          <div className="contact-card" key={contact.id} onClick={() => openModal(contact)}>
+            
+            <div className="contact-details">
+              <h3>{contact.name}</h3>
+              <p>{contact.phone}</p>
+            </div>
           </div>
+        ))}
+      </div>
+
+      {selectedContact && <ContactModal contact={selectedContact} closeModal={closeModal} />}
+    
+  
        
 <div className='complaint-right'>
       
-        <div className="complaint-datetime-container">
+        <div className="contacts-datetime-container">
           <span className="complaint-date-text">{formatDate(dateTime)}</span>
           <span className="complaint-time-text">{formatTime(dateTime)}</span>
         </div>
-      
+     
         </div>
 
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
-  </>
+        <div className="contacts-search-container">
+      
+      <input
+        className="contacts-search-input"
+        type="text"
+        placeholder="Search contacts..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <div className="contacts-search-icon">
+  <FaSearch />
+</div>
+    </div>
+        </div>
+        </>
 );
 };
 

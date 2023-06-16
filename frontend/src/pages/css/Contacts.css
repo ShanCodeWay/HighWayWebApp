@@ -1,0 +1,129 @@
+
+
+  .contacts-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7dddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+   
+    width: 100%;
+    padding: 20px;
+    margin:auto auto; /* This will center the container horizontally */
+    min-height: 400px;
+  }
+  
+  
+
+  
+  .contacts-grid {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .contact-card {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .contact-image-modal { 
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .contact-details {
+    margin-top: 10px;
+  }
+  
+  .contact-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .contact-modal-content {
+    position: relative;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .contact-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+  }
+
+  .contacts-datetime-container {
+    display: flex;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -40px;
+    margin-left: 165px;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: #cbe1f2;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 5px solid #0f0fa2;
+  
+  }
+ 
+  .contacts-search-container {
+    top: 40%;
+    padding-left: 20px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    border-color: #2e68a1;
+    border-radius: 20px;
+    background-color: #70efc700;
+    left: 0;
+  }
+  .contacts-search-input {
+    position: relative;
+    background-color: #fcfcfc;
+    border-color: #2e68a1;
+    border-radius: 20px;
+    border-width: 5px;
+    color: #2e68a1;
+    padding: 25px; /* Increase the padding as desired */
+    font-size: 18px; /* Increase the font size as desired */
+    font-weight: bold;
+    width: 450px; /* Adjust the width as needed */
+   
+  }
+  
+  
+ .contacts-search-icon {
+    position: absolute;
+    right: 100px; /* Adjust the position as needed */
+    color: #2e68a1;
+    font-size: 18px; /* Adjust the font size as needed */
+  }

@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './css/Complain.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook,faHome, faComments, faList, faBars, faTimes, faAngleDown, faAngleUp, faTrashAlt, faExclamationTriangle, faSync  } from '@fortawesome/free-solid-svg-icons';
-import logoImage from '../assets/images/logo.png';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ErrorModal from "../Data/ErrorModal.js";
-import SuccessModal from "../Data/SuccessModal.js";
-import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
+import './css/MobileApp.css';
+
+import { FaQuestionCircle, FaAddressBook } from 'react-icons/fa';
 
 
 
@@ -61,60 +51,39 @@ const MobileApp = () => {
 
  
 
-    const handleModalClose = () => {
-      setSuccessVisible(false);
-      setKey('');
-    };
-
+ 
 
 
       return (
         <>
+        <div className='mobileapp-body'>
+     
+      <div className="mobileapp-container">
+      
+        <div className="mobileapp-datetime-container">
+          <span className="mobileapp-date-text">{formatDate(dateTime)}</span>
+          <span className="mobileapp-time-text">{formatTime(dateTime)}</span>
+        </div>
+      
        
-
-
-     
-
-     
-      <div className="complain-container">
-      
-     
-
-
-      
-
-
+        <div>
+      <Link to="/Editfaq" className="mobileapp-button">
+        <FaQuestionCircle className="mobileapp-button" />
+        <span>Edit FAQ</span>
+      </Link>
+      <Link to="/EditContacts" className="mobileapp-button">
+        <FaAddressBook className="mobileapp-button" />
+        <span>Edit Contacts</span>
+      </Link>
+    </div>
 
 
 
-     
-   
-
-
-        <div className='complaint-left' >
-
-        <h2>MobileApp page</h2>
-        <p>This is MobileApp page</p>
 
         </div>
 
-       
 
-       
-          </div>
-       
-<div className='complaint-right'>
-      
-        <div className="complaint-datetime-container">
-          <span className="complaint-date-text">{formatDate(dateTime)}</span>
-          <span className="complaint-time-text">{formatTime(dateTime)}</span>
-        </div>
-      
-        </div>
-
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
+        </div>  
   </>
 );
 };

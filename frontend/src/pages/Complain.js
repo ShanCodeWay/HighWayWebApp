@@ -2,19 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './css/Complain.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook,faHome, faComments, faList, faBars, faTimes, faAngleDown, faAngleUp, faTrashAlt, faExclamationTriangle, faSync  } from '@fortawesome/free-solid-svg-icons';
-import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
-
-import logoImage from '../assets/images/logo.png';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorModal from "../Data/ErrorModal.js";
-import SuccessModal from "../Data/SuccessModal.js";
+import ErrorModal from "../Data/component/ErrorModal.js";
+import SuccessModal from "../Data/component/SuccessModal.js";
 
 
 
@@ -40,9 +30,7 @@ const Complaints = () => {
   const [isProfileDrawerOpen, setIsProfileDrawerOpen] = useState(false);
 
  
-  const handleProfileDrawerClick = () => {
-    setIsProfileDrawerOpen(!isProfileDrawerOpen);
-  };
+
  
   useEffect(() => {
     const interval = setInterval(() => {
@@ -347,9 +335,6 @@ const Complaints = () => {
       
         </div>
 
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
   </>
 );
 };

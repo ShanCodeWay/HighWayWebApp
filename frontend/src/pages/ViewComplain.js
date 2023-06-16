@@ -580,13 +580,13 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
         </main>
         </div>
         <div className="right-column">
-        <div className="datetime-container">
-                  <span className="date-text">{formatDate(dateTime)}</span>
-                  <span className="time-text">{formatTime(dateTime)}</span>
+        <div className="ViewComplaint-datetime-container">
+                  <span className="ViewComplaint-date-text">{formatDate(dateTime)}</span>
+                  <span className="ViewComplaint-time-text">{formatTime(dateTime)}</span>
                 </div>
         
         <div className="search-container">
-          
+          <div className='faq-search-container'>
                   <input
             type="text"
             placeholder="Search by ID"
@@ -595,7 +595,7 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
             
           />
        
- 
+       </div>
   <button className="search-button"  onClick={handleSearch}>
   
   <FontAwesomeIcon icon={faSearch} />
@@ -651,9 +651,7 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
     Next
   </button>
 </div>
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
+   
   </>
 );
 

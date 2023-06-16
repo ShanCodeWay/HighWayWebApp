@@ -10,8 +10,18 @@ import {
   faExclamationTriangle,
   faMobileScreenButton,
   faUser,
-  faTimes
+  faTimes,
+ faCommentsquestion,
+ faBookOpen,
+ faBookOpenReader,
+ 
 } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
+
+
 
 const Navbar = ({ isProfileDrawerOpen, handleProfileDrawerClick, isDrawerOpen, setIsDrawerOpen }) => {
   return (
@@ -38,11 +48,18 @@ const Navbar = ({ isProfileDrawerOpen, handleProfileDrawerClick, isDrawerOpen, s
             </a>
           </li>
         </Link>
+        <Link to="/FAQ">
+          <li>
+            <a href="#">
+              <FontAwesomeIcon icon={faComments} className="icon" beat /> FAQ
+            </a>
+          </li>
+        </Link>
 
         <Link to="/Complain">
           <li>
             <a href="#">
-              <FontAwesomeIcon icon={faComments} className="icon" beat /> Complaints
+              <FontAwesomeIcon icon={faBookOpenReader} className="icon" beat /> Complaints
             </a>
           </li>
         </Link>

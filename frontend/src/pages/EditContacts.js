@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './css/Complain.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook,faHome, faComments, faList, faBars, faTimes, faAngleDown, faAngleUp, faTrashAlt, faExclamationTriangle, faSync  } from '@fortawesome/free-solid-svg-icons';
-import logoImage from '../assets/images/logo.png';
-import { toast } from 'react-toastify';
+import './css/EditContacts.css';
+
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorModal from "../Data/ErrorModal.js";
-import SuccessModal from "../Data/SuccessModal.js";
+import ErrorModal from "../Data/component/ErrorModal.js";
+import SuccessModal from "../Data/component/SuccessModal.js";
 import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -71,48 +64,13 @@ const EditContacts = () => {
       return (
         <>
     
-
-
-     
+<div className="EditContacts-body">
 
      
-      <div className="complain-container">
+
+     
+      <div className="EditContacts-container">
       
-     
-
-
-      
-
-
-
-
-
-     
-      <div className={`ProfileDrawer ${isProfileDrawerOpen ? 'open' : 'close'}`}>
-  <ul>
-    <li>Account</li>
-    <li>Profile</li>
-    <li>Sign In</li>
-    <li>Sign Up</li>
-  </ul>
-</div>
-
-<div className={`drawer-menu ${isDrawerOpen ? 'open' : 'close'}`}>
-  <ul>
-    <li>Instruction</li>
-    <li>Contact Numbers</li>
-    <li>Details of Operators</li>
-    <li>Events</li>
-  </ul>
-</div>
-
-
-        <div className='complaint-left' >
-
-        <h2>MobileApp page</h2>
-        <p>This is MobileApp page</p>
-
-        </div>
 
        
 
@@ -128,9 +86,7 @@ const EditContacts = () => {
       
         </div>
 
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
+ </div>
   </>
 );
 };

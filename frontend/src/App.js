@@ -9,9 +9,10 @@ import MobileApp from './pages/MobileApp';
 import Contacts from './pages/Contacts';
 import FAQ from './pages/FAQ';
 import EditContacts from './pages/EditContacts';
-import Navbar from './Data/Navbar';
-import Header from './Data/Header';
-
+import Navbar from './Data/component/Navbar';
+import Header from './Data/component/Header';
+import Footer from './Data/component/Footer';
+import Editfaq from './pages/Editfaq';
 // Rest of the code...
 
 
@@ -26,7 +27,9 @@ function Home() {
       <Link to="/Complain">
         <button className="home-button">Click Me</button>
       </Link>
+      <div className="middle"></div>
     </div>
+    
   );
 }
 
@@ -41,6 +44,7 @@ function RibbonMessageProvider() {
     ribbonMessage = 'Log Page';
   } else if (location.pathname === '/MobileApp') {
     ribbonMessage = 'MobileApp Edit Page';
+    
   } else if (location.pathname === '/ViewComplain') {
     ribbonMessage = 'ViewComplain Page';
   } else if (location.pathname === '/Contacts') {
@@ -48,6 +52,13 @@ function RibbonMessageProvider() {
   } else if (location.pathname === '/EditContacts') {
     ribbonMessage = 'Edit Contacts Page';
   }
+  else if (location.pathname === '/FAQ') {
+    ribbonMessage = 'FAQ Page';
+  }
+  else if (location.pathname === '/Editfaq') {
+    ribbonMessage = 'Edit FAQ page';
+  }
+
 
   return <Header ribbonMessage={ribbonMessage} />;
 }
@@ -97,7 +108,10 @@ function App() {
         <Route path="/Contacts" element={<Contacts />} />
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/EditContacts" element={<EditContacts />} />
+        <Route path="/Editfaq" element={<Editfaq />} />
       </Routes>
+     
+      <Footer />
     </>
   );
 }

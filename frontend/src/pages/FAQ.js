@@ -1,43 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './css/Complain.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook,faHome, faComments, faList, faBars, faTimes, faAngleDown, faAngleUp, faTrashAlt, faExclamationTriangle, faSync  } from '@fortawesome/free-solid-svg-icons';
-import logoImage from '../assets/images/logo.png';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ErrorModal from "../Data/ErrorModal.js";
-import SuccessModal from "../Data/SuccessModal.js";
-import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
+import { FaPlus, FaMinus, FaSearch } from 'react-icons/fa';
+import { questions } from '../Data/details/questions';
+import './css/FAQ.css';
 
 const FAQ = () => {
- 
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorVisible, setErrorVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successVisible, setSuccessVisible] = useState(false);
-  
-  const [key, setKey] = useState('');
-  
   const [dateTime, setDateTime] = useState(new Date());
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const [isProfileDrawerOpen, setIsProfileDrawerOpen] = useState(false);
-
- 
-  const handleProfileDrawerClick = () => {
-    setIsProfileDrawerOpen(!isProfileDrawerOpen);
-  };
- 
   useEffect(() => {
     const interval = setInterval(() => {
       setDateTime(new Date());
@@ -58,64 +28,79 @@ const FAQ = () => {
     return date.toLocaleTimeString(undefined, options);
   };
 
+  const toggleQuestion = (questionId) => {
+    setSelectedQuestion((prevQuestion) => (prevQuestion === questionId ? null : questionId));
+  };
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredQuestions = questions.filter((q) =>
+    q.question.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    
+    <>
+  <div className="faq-body"> 
+  <div className="faq-search-container">
+     
+     <input className='faq-search-input'
+     
+       type="text"
+       placeholder="Search questions..."
+       value={searchQuery}
+       onChange={handleSearch}
+     />
+
+<div className="faq-search-icon">
+     <FaSearch />
+   </div>
+   </div>
+ 
+      <div className="faq-container">
+ 
  
 
-    const handleModalClose = () => {
-      setSuccessVisible(false);
-      setKey('');
-    };
-
-
-
-      return (
-        <>
+     
       
-
-
-     
-
-     
-      <div className="complain-container">
-      
-     
-
-
-      
-
-
-
-
-
-     
-    
-
-        <div className='complaint-left' >
-
-        <h2>MobileApp page</h2>
-        <p>This is MobileApp page</p>
-
-        </div>
-
-       
-
-       
+        <div className="faq-middle">
+          <h1>Frequently Asked Questions</h1>
+          
+          <ul>
+            {filteredQuestions.map((q) => (
+              <li key={q.id} className={selectedQuestion === q.id ? 'faq-active' : ''}>
+                <div className="faq-question-header" onClick={() => toggleQuestion(q.id)}>
+                  <span className="bullet-icon">
+                    {selectedQuestion === q.id ? (
+                      <FaMinus className="faq-icon" />
+                    ) : (
+                      <FaPlus className="faq-icon" />
+                    )}
+                  </span>
+                  <span className="question-text">{q.question}</span>
+                </div>
+                <div className={`answer-container ${selectedQuestion === q.id ? 'open' : ''}`}>
+                  <p>{q.answer}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="complaint-right">
+            <div className="complaint-datetime-container">
+              <span className="complaint-date-text">{formatDate(dateTime)}</span>
+              <span className="complaint-time-text">{formatTime(dateTime)}</span>
+            </div>
           </div>
-       
-<div className='complaint-right'>
-      
-        <div className="complaint-datetime-container">
-          <span className="complaint-date-text">{formatDate(dateTime)}</span>
-          <span className="complaint-time-text">{formatTime(dateTime)}</span>
         </div>
-      
-        </div>
+      </div>
 
-    <footer className="footer">
-      <p>&copy; 2023 Highway Bus Management System Web App. All rights reserved.</p>
-    </footer>
-  </>
-);
+
+     
+      </div>
+    </>
+  );
 };
 
 export default FAQ;

@@ -5,7 +5,7 @@ import multer from 'multer';
 import { v4 as uuidv4 } from 'uuid';
 import bodyParser from 'body-parser';
 import validator from 'validator';
-import { Complaint, Log } from './database.js';
+import { Complaint, Log, FAQ } from './database.js';
 
 
 const router                                            = express.Router();
@@ -255,11 +255,11 @@ res.json({ message                                      : 'Complaint deleted suc
             ////////////////////////////////////////////////////////////////
             router.post('/api/log', async (req, res) => {
                 try {
-                  const { data, note, checkbox } = req.body;
+                  const { data, note, checkbox }        = req.body;
               
                   // Create a new log entry
                   const newLog = new Log({
-                    key: uuidv4(),
+                    key                                 : uuidv4(),
                     ...data,
                     note,
                     checkbox,
@@ -268,39 +268,129 @@ res.json({ message                                      : 'Complaint deleted suc
                   // Save the log entry to the database
                   await newLog.save();
               
-                  res.status(201).json({ message: 'Log created successfully' });
+                  res.status(201).json({ message        : 'Log created successfully' });
                 } catch (error) {
                   console.error(error);
-                  res.status(500).json({ message: 'Failed to create log' });
+                  res.status(500).json({ message        : 'Failed to create log' });
                 }
               });
 
            
 
               router.put('/api/log/:key', async (req, res) => {
-                const { key } = req.params;
-                const { checkbox } = req.body;
+                const { key }                           = req.params;
+                const { checkbox }                      = req.body;
               
                 try {
                   // Find the complaint in the database
-                  const complaint = await Complaint.findOne({ key });
+                  const complaint                       = await Complaint.findOne({ key });
               
                   if (!complaint) {
-                    return res.status(404).json({ error: 'Complaint not found' });
+                    return res.status(404).json({ error : 'Complaint not found' });
                   }
               
                   // Update the complaint's checkbox value
-                  complaint.checkbox = checkbox;
+                  complaint.checkbox                    = checkbox;
               
                   // Save the updated complaint
                   await complaint.save();
               
-                  res.json({ message: 'Complaint checkbox updated successfully' });
+                  res.json({ message                    : 'Complaint checkbox updated successfully' });
                 } catch (error) {
                   console.error(error);
-                  res.status(500).json({ error: 'Server error' });
+                  res.status(500).json({ error          : 'Server error' });
                 }
               });
+
+              // FAQ router
+// Define the endpoint for getting all FAQ entries
+router.get('/faq', async (req, res) => {
+  try {
+    const faqs                                          = await FAQ.find();
+    res.json(faqs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message                      : 'An error occurred while getting the FAQ entries.' });
+  }
+});
+
+// Define the endpoint for getting a single FAQ entry
+router.get('/faq/:id', async (req, res) => {
+  try {
+    const faq                                           = await FAQ.findById(req.params.id);
+    if (faq) {
+      res.json(faq);
+    } else {
+      res.status(404).json({ message                    : 'FAQ entry not found.' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ message                      : 'Invalid FAQ entry ID.' });
+  }
+});
+
+// Define the endpoint for creating an FAQ entry
+router.post('/faq', async (req, res) => {
+  try {
+    const { question, answer }                          = req.body;
+
+    // Create a new FAQ entry
+    const newFAQ                                        = new FAQ({ question, answer });
+
+    // Save the FAQ entry to the database
+    await newFAQ.save();
+
+    res.status(201).json({ message                      : 'FAQ entry created successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message                      : 'Failed to create FAQ entry' });
+  }
+});
+
+// Define the endpoint for updating an FAQ entry
+router.put('/faq/:id', async (req, res) => {
+  try {
+    const { question, answer }                          = req.body;
+
+    // Find the FAQ entry in the database
+    const faq                                           = await FAQ.findById(req.params.id);
+
+    if (!faq) {
+      return res.status(404).json({ message             : 'FAQ entry not found' });
+    }
+
+    // Update the FAQ entry
+    faq.question                                        = question;
+    faq.answer                                          = answer;
+
+    // Save the updated FAQ entry
+    await faq.save();
+
+    res.json({ message                                  : 'FAQ entry updated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message                      : 'Failed to update FAQ entry' });
+  }
+});
+
+// Define the endpoint for deleting an FAQ entry
+router.delete('/faq/:id', async (req, res) => {
+  try {
+    const result                                        = await FAQ.findByIdAndDelete(req.params.id);
+    if (!result) {
+      res.status(404).json({ message                    : 'FAQ entry not found' });
+      return;
+    }
+    res.json({ message                                  : 'FAQ entry deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message                      : 'Failed to delete FAQ entry' });
+  }
+});
+
+
+
+              
           export default router;
 
 

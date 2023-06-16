@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import errorAnimationData from '../assets/animation/error.json';
+import errorAnimationData from '../../assets/animation/error.json';
 import './ErrorModal.css';
 
 const ErrorModal = ({

@@ -1,0 +1,23 @@
+.Editfaq-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7dddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+   
+    width: 100%;
+    padding: 20px;
+    margin:auto auto; /* This will center the container horizontally */
+    min-height: 400px;
+  }
+
+  .Editfaq-body{
+    position: abs;
+   max-width: 100%;
+   max-height: fit-content;
+   min-height: 500px;
+   ;
+   background-color: antiquewhite; 
+}

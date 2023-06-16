@@ -1,0 +1,76 @@
+.mobileapp-body{
+    position: abs;
+   max-width: 100%;
+   max-height: fit-content;
+   min-height: 500px;
+   ;
+   background-color: antiquewhite; 
+}
+
+
+
+
+.mobileapp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7dddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 0px;
+    margin: auto auto; /* This will center the container horizontally */
+    margin-left:0;
+    min-height: 400px;
+  }
+
+  .mobileapp-datetime-container {
+    display: flex;
+      position: absolute;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: -22%;
+      margin-left: 70%;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 400px;
+      background-color: #cbe1f2;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 5px solid #0f0fa2;
+  
+  }
+  
+  .mobileapp-time-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0b55a3;
+    padding-left: 10px;
+  }
+  .mobileapp-date-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0b55a3;
+  }
+
+  .mobileapp-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobileapp-button:hover {
+    background-color: #ccc;
+  }
+  
+  .mobileapp-icon {
+    margin-right: 10px;
+  }
+  

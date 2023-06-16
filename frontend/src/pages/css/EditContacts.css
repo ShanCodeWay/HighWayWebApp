@@ -1,0 +1,25 @@
+.EditContacts-body{
+    position: abs;
+   max-width: 100%;
+   max-height: fit-content;
+   min-height: 500px;
+   ;
+   background-color: antiquewhite; 
+}
+
+
+
+
+.EditContacts-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7dddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 0px;
+    margin: auto auto; /* This will center the container horizontally */
+    margin-left:0;
+    min-height: 400px;
+  }

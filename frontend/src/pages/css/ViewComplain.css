@@ -23,6 +23,12 @@ body {
   margin-bottom             : 0%;
   
 }
+.middle {
+  background-color: #35d963;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
 
 .left-column,
 .middle-column,
@@ -501,33 +507,34 @@ button.search-button:hover.search-button,
   cursor                    : not-allowed;
 }
 
-.datetime-container {
-  display                   : flex;
-  position                  : absolute;
-  padding-left              : 10px;
-  padding-right             : 10px;
-  margin-top                : 30px;
-  margin-left               : 20px;
-  align-items               : center;
-  justify-content           : center;
-  height                    : 50px;
-  background-color          : #cbe1f2;
-  border-radius             : 20px;
-  box-shadow                : 0 2px 4px rgba(0, 0, 0, 0.1);
-  border                    : 5px solid #0f0fa2;
+.ViewComplaint-datetime-container {
+  display: flex;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+    margin-left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 400px;
+    background-color: #cbe1f2;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 5px solid #0f0fa2;
 
 }
 
-.time-text {
-  font-size                 : 30px;
-  font-weight               : bold;
-  color                     : #0b55a3;
-  padding-left              : 10px;
+.ViewComplaint-time-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0b55a3;
+  padding-left: 10px;
 }
-.date-text {
-  font-size                 : 30px;
-  font-weight               : bold;
-  color                     : #0b55a3;
+.ViewComplaint-date-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0b55a3;
 }
 
 
@@ -537,6 +544,7 @@ button.search-button:hover.search-button,
   padding                   : 20px;
   text-align                : center;
   width                     : 100%;
+  
 }
 
 .spin {

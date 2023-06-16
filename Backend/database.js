@@ -18,7 +18,7 @@ const complainSchema = new Schema({
   complainType            : String,
   complain                : String,
   image                   : String,
-  note                   : String, // Add this line
+  note                    : String, // Add this line
   createdAt               : { type: Date, default: Date.now }
 });
 
@@ -29,11 +29,25 @@ const logSchema = new Schema({
   complainType            : String,
   complain                : String,
   image                   : String,
-  note                  : String,
+  note                    : String,
   checkbox                : { type: Boolean },
   createdAt               : { type: Date, default: Date.now }
 });
 
+
+
+// Create the FAQ schema
+const faqSchema = new Schema({
+  question: {
+    type                  : String,
+    required              : true,
+  },
+  answer: {
+    type                  : String,
+    required              : true,
+  },
+});
 // Define model for your collection
 export const Complaint    = mongoose.model('Complaint', complainSchema);
 export const Log          = mongoose.model('Log', logSchema);
+export const FAQ          = mongoose.model('FAQ', faqSchema);

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
-import animationData from '../assets/animation/trowsome.json';
+import animationData from '../../assets/animation/trowsome.json';
 import './SuccessModal.css';
 
 const SuccessModal = ({
