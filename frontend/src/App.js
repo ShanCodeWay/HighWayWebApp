@@ -4,69 +4,82 @@ import logo from './logo.svg';
 import './App.css';
 import ViewComplain from './pages/ViewComplain';
 import Complain from './pages/Complain';
-import Log from './pages/LogCompalin'; // Corrected import
+import Log from './pages/Log'; 
 import MobileApp from './pages/MobileApp';
 import Contacts from './pages/Contacts';
 import FAQ from './pages/FAQ';
 import EditContacts from './pages/EditContacts';
-import Navbar from './Data/component/Navbar';
+
 import Header from './Data/component/Header';
 import Footer from './Data/component/Footer';
 import Editfaq from './pages/Editfaq';
-// Rest of the code...
+import 'bootstrap/dist/css/bootstrap.css';
+import admin from './assets/images/admin.jpg';
+import sound from './assets/images/soundwave.png';
 
 
-// Rest of the code...
+
 
 
 function Home() {
   return (
-    <div className="home-container">
-      <h1 className="home-title">Welcome to the Home Page</h1>
-      <p className="home-content">This is the content of the home page.</p>
-      <Link to="/Complain">
-        <button className="home-button">Click Me</button>
-      </Link>
-      <div className="middle"></div>
+    <div className                                      = "home-container">
+      <h1 className                                     = "display-4">Welcome to the HBMS </h1>
+      <div className                                    = "home-content">
+      <p className                                      = "lead">We provide an efficient and reliable platform for managing and organizing bus
+       transportation on highways. Whether you're a bus operator, a traveler, or a 
+       transportation authority, our system is designed to streamline operations, enhance passenger 
+       experience, and ensure seamless communication..</p>
     </div>
-    
+      <div className                                    = "header-admin">
+          <img src                                      = {admin} alt="Logo" />
+        </div>
+
+        <div className                                  = "header-sound">
+          <img src                                      = {sound} alt="Logo" />
+        </div>
+      <Link to                                          = "/Complain">
+        <button className                               = "btn btn-primary">Click Me</button>
+      </Link>
+      <div className                                    = "middle"></div>
+    </div>
   );
 }
 
 function RibbonMessageProvider() {
-  const location = useLocation(); // Get the current location
+  const location                                        = useLocation();
 
-  // Determine the ribbon message based on the current location
-  let ribbonMessage = 'Welcome to the Home Page';
+  
+  let ribbonMessage                                     = 'Welcome';
   if (location.pathname === '/Complain') {
-    ribbonMessage = 'Complain Page';
+    ribbonMessage                                       = 'Complain Page';
   } else if (location.pathname === '/Log') {
-    ribbonMessage = 'Log Page';
+    ribbonMessage                                       = 'Log Page';
   } else if (location.pathname === '/MobileApp') {
-    ribbonMessage = 'MobileApp Edit Page';
+    ribbonMessage                                       = 'MobileApp Edit Page';
     
   } else if (location.pathname === '/ViewComplain') {
-    ribbonMessage = 'ViewComplain Page';
+    ribbonMessage                                       = 'ViewComplain Page';
   } else if (location.pathname === '/Contacts') {
-    ribbonMessage = 'Contacts Page';
+    ribbonMessage                                       = 'Contacts Page';
   } else if (location.pathname === '/EditContacts') {
-    ribbonMessage = 'Edit Contacts Page';
+    ribbonMessage                                       = 'Edit Contacts Page';
   }
   else if (location.pathname === '/FAQ') {
-    ribbonMessage = 'FAQ Page';
+    ribbonMessage                                       = 'FAQ Page';
   }
   else if (location.pathname === '/Editfaq') {
-    ribbonMessage = 'Edit FAQ page';
+    ribbonMessage                                       = 'Edit FAQ page';
   }
 
 
-  return <Header ribbonMessage={ribbonMessage} />;
+  return <Header ribbonMessage                          = {ribbonMessage} />;
 }
 
 function App() {
-  // State and handler functions for profile drawer and mobile drawer
-  const [isProfileDrawerOpen, setIsProfileDrawerOpen] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+ 
+  const [isProfileDrawerOpen, setIsProfileDrawerOpen]   = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen]                 = useState(false);
 
   const handleProfileDrawerClick = () => {
     setIsProfileDrawerOpen(!isProfileDrawerOpen);
@@ -74,41 +87,20 @@ function App() {
 
   return (
     <>
-      <Navbar
-        isProfileDrawerOpen={isProfileDrawerOpen}
-        handleProfileDrawerClick={handleProfileDrawerClick}
-        isDrawerOpen={isDrawerOpen}
-        setIsDrawerOpen={setIsDrawerOpen}
-      />
+   
 
-      <div className={`ProfileDrawer ${isProfileDrawerOpen ? 'open' : 'close'}`}>
-        <ul>
-          <li>Account</li>
-          <li>Profile</li>
-          <li>Sign In</li>
-          <li>Sign Up</li>
-        </ul>
-      </div>
-
-      <div className={`drawer-menu ${isDrawerOpen ? 'open' : 'close'}`}>
-        <ul>
-          <li>Instruction</li>
-          <li>Contact Numbers</li>
-          <li>Details of Operators</li>
-          <li>Events</li>
-        </ul>
-      </div>
+     
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ViewComplain" element={<ViewComplain />} />
-        <Route path="/Complain" element={<Complain />} />
-        <Route path="/Log" element={<Log />} />
-        <Route path="/MobileApp" element={<MobileApp />} />
-        <Route path="/Contacts" element={<Contacts />} />
-        <Route path="/FAQ" element={<FAQ />} />
-        <Route path="/EditContacts" element={<EditContacts />} />
-        <Route path="/Editfaq" element={<Editfaq />} />
+        <Route path                                     = "/" element={<Home />} />
+        <Route path                                     = "/ViewComplain" element={<ViewComplain />} />
+        <Route path                                     = "/Complain" element={<Complain />} />
+        <Route path                                     = "/Log" element={<Log />} />
+        <Route path                                     = "/MobileApp" element={<MobileApp />} />
+        <Route path                                     = "/Contacts" element={<Contacts />} />
+        <Route path                                     = "/FAQ" element={<FAQ />} />
+        <Route path                                     = "/EditContacts" element={<EditContacts />} />
+        <Route path                                     = "/Editfaq" element={<Editfaq />} />
       </Routes>
      
       <Footer />

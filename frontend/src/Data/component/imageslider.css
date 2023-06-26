@@ -1,0 +1,31 @@
+.imageslider-image {
+    position        : absolute ;
+    width           : 100%;
+    height          : 100%;
+    overflow        : hidden;
+    box-shadow      : 0 10px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .imageslider-animation {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    animation       : fade 6s ease-in infinite;
+    border-radius   : 20px;
+    box-shadow      : 0 10px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes fade {
+    40% {
+      opacity       : 0.8;
+    }
+    50% {
+      opacity       : 1;
+    }
+    100% {
+      opacity       : 1;
+    }
+  }
+  

@@ -1,9 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-
-import animationData from '../../assets/animation/trowsome.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './SuccessModal.css';
 
 const SuccessModal = ({
@@ -18,7 +15,7 @@ const SuccessModal = ({
   title,
   message,
 }) => {
-  const [modalVisible, setModalVisible] = useState(visible);
+  const [modalVisible, setModalVisible]   = useState(visible);
 
   const closeModal = () => {
     setModalVisible(false);
@@ -27,23 +24,33 @@ const SuccessModal = ({
 
   return (
     <CSSTransition
-      in={modalVisible}
-      timeout={300}
-      classNames="modal"
+      in                                  = {modalVisible}
+      timeout                             = {300}
+      classNames                          = "modal"
       unmountOnExit
-      onExited={() => setVisible(false)}
+      onExited                            = {() => setVisible(false)}
     >
-      <div className="modal-container" style={{ backgroundColor }}>
-       
-        <div className="modal-content">
-          <div className="icon-container">
-            
+      <div className                      = "Sucess-modal-container"style={{ display: visible ? 'block' : 'none' }}>
+        <div className                    = "modal-dialog modal-dialog-centered">
+          <div className                  = "Sucess-modal-content">
+            <div className                = "modal-header">
+              <h2 className               = "modal-title">{title}</h2>
+              <button
+                type                      = "button"
+                className                 = "btn-close"
+                onClick                   = {closeModal}
+                aria-label                = "Close"
+              ></button>
+            </div>
+            <div className                = "modal-body">
+              <p className                = "modal-message">{message}</p>
+            </div>
+            <div className                = "modal-footer">
+              <button className           = "btn btn-secondary" onClick={closeModal}>
+                Close
+              </button>
+            </div>
           </div>
-          <h2 className="modal-title">{title}</h2>
-          <p className="modal-message">{message}</p>
-          <button className="modal-close" onClick={closeModal}>
-            Close
-          </button>
         </div>
       </div>
     </CSSTransition>

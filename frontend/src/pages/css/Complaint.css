@@ -1,0 +1,413 @@
+/* complaint.css */
+.faq-body{
+  display                     : flex;
+  flex-direction              : row;
+  position                    : abs;
+ max-width                    : 100%;
+ max-height                   : fit-content;
+ min-height                   : 500px;
+ ;
+ background                   : linear-gradient(135deg, #fafafa 26%, #e6e6e6 48%, #b3b3b3 78%);
+ background-size              : 400% 400%;
+ animation                    : body 8s ease infinite;
+ box-shadow                   : 0 10px 10px rgba(0, 0, 0, 0.2);
+
+ padding                      : 20px;
+}
+@keyframes body {
+                     
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+.complaint-container {
+  display                     : flex;
+  flex-direction              : column;
+  position                    : relative;
+ max-width                    : auto;
+ max-height                   : fit-content;
+ min-height                   : 500px;
+ ;
+ background                   : linear-gradient(45deg, #c2c4ff 16%, #daf5fb 50%, #bdd9ff 87%);
+ background-size              : 400% 400%;
+ animation                    : body 8s ease infinite;
+ box-shadow                   : 0 10px 10px rgba(0, 0, 0, 0.2);
+
+ padding                      : 20px;
+}
+@keyframes body {
+                     
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+.complaint-complaint-container {
+  display                     : flex;
+  justify-content             : center;
+  align-items                 : center;
+  padding                     : 20px;
+  background                  : linear-gradient(45deg, #fff3a8 1%, #a8ffc8 73%, #3a643a 98%);
+background-size               : 400% 400%;
+animation                     : formm 6s ease infinite;
+  border-radius               : 30px;
+  width                       : 50%;
+  padding-left                : 20px ;
+  padding-right               : 40px;
+  
+}
+@keyframes formm {
+                    
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+.complaint-form {
+  flex-direction              : column;
+  display                     : flex;
+  margin                      : 0 auto;
+  width                       : 600px;
+  
+  
+}
+
+.complaint-inputContainer {
+  border-radius               : 20px;
+  margin-bottom               : 5px;
+  padding                     : 5px 50px 20px 10px;
+  background                  : linear-gradient(135deg, #b17713 20%, #ffffff 66%, #ffff4f 99%);
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.complaint-label {
+  display                     : block;
+  font-weight                 : bold;
+  margin-bottom               : 5px;
+  color                       : #fff
+  
+  
+}
+
+.complaint-input {
+  width                       : 100%;
+  padding                     : 10px;
+  border                      : 1px solid #030330;
+  border-radius               : 20px;
+  background-color            : #ffffff;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.complaint-dropdown {
+  width                       : 100%;
+  padding                     : 10px;
+  border                      : 1px solid #060027;
+  border-radius               : 5px;
+  background-color            : #fff;
+  cursor                      : pointer;
+}
+
+.complaint-textareaContainer {
+  position                    : relative;
+}
+
+.complaint-textarea {
+  width                       : 100%;
+  padding                     : 10px;
+  border                      : 1px solid #181238;
+  border-radius               : 5px;
+  resize                      : vertical;
+  
+}
+
+.complaint-attachmentContainer {
+  display                     : flex;
+  align-items                 : center;
+  justify-content             : flex-end;
+  margin-top                  : 10px;
+}
+
+.complaint-attachment {
+  position                    : relative;
+  margin-right                : 10px;
+}
+
+.complaint-attachmentImage {
+  width                       : 50px;
+  height                      : 50px;
+  object-fit                  : cover;
+  border-radius               : 5px;
+}
+
+.complaint-attachmentButton {
+  display                     : inline-flex;
+  align-items                 : center;
+  padding                     : 10px 15px;
+  border                      : none;
+  border-radius               : 25px;
+  background-color            : #283593;
+  color                       : white;
+  font-weight                 : bold;
+  cursor                      : pointer;
+  transition                  : background-color 0.3s ease-in-out;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.complaint-attachmentButton:hover {
+  background-color            : #070a2c;
+}
+
+.complaint-attachmentButton .complaint-paperclip {
+  margin-right                : 5px;
+}
+
+
+
+.complaint-submitButton {
+  display                     : flex;
+  justify-content             : center;
+  align-items                 : center;
+  width                       : 30%;
+  padding                     : 10px;
+  border                      : none;
+  border-radius               : 25px;
+  background-color            : #283593;
+  color                       : #fff;
+  cursor                      : pointer;
+  font-weight                 : bold;
+  font-size                   : 20px;
+  transition                  : background-color 0.3s ease-in-out;
+  margin-left                 : 39%;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.complaint-submitButton:hover {
+  background-color            : #1e2469;
+}
+
+.clip-icon{
+ padding-right                : 10px;
+}
+
+.upload-icon{
+  padding-left                : 10px;
+  align-items                 : center;
+  justify-content             : center;
+font-size                     : 14px;}
+
+
+
+.complaint-right {
+  display                     : flex;
+  position                    : absolute;
+  flex-direction              : column;
+  justify-content             : center;
+  align-items                 : center;
+  padding                     : 20px;
+  background                  : linear-gradient(45deg, #fff3a8 1%, #a8ffc8 73%, #3a643a 98%);
+background-size               : 400% 400%;
+animation                     : formm 6s ease infinite;
+width                         : 30%;
+height                        : 85%;
+margin-left                   : 58%;
+border-radius                 : 20px;
+box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+ 
+}
+@keyframes formm {
+                    
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+
+.complaint-datetime-container {
+  display                     : flex;
+    position                  : relative;
+    padding-left              : 10px;
+    padding-right             : 10px;
+    margin-top                : -100%;
+    align-items               : center;
+    justify-content           : center;
+    height                    : 50px;
+    width                     : 400px;
+    background-color          : #cbe1f2;
+    border-radius             : 20px;
+    box-shadow                : 0 2px 4px rgba(0, 0, 0, 0.1);
+    border                    : 5px solid #0f0fa2;
+    box-shadow                : 0 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.complaint-time-text {
+  justify-content             : center;
+  align-items                 : center;
+  font-size                   : 20px;
+  font-weight                 : bold;
+  color                       : #0b55a3;
+  padding-left                : 20px;
+}
+.complaint-date-text {
+  font-size                   : 20px;
+  font-weight                 : bold;
+  color                       : #0b55a3;
+}
+
+
+/* Modal styles */
+.complaint-modal {
+  position                    : absolute;
+  top                         : 0;
+  left                        : 0;
+  width                       : 20%;
+  height                      : 30%;
+  display                     : flex;
+  align-items                 : center;
+  justify-content             : center;
+  z-index                     : 9999;
+  
+}
+
+/* Modal Content */
+
+
+
+/* Modal Content */
+.complaint-modal-content {
+  background-color            : rgb(95, 61, 231);
+  border-radius               : 8px;
+  padding                     : 20px;
+  max-width                   : 400px;
+  width                       : 100%;
+  box-shadow                  : 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Title */
+.complaint-modal-title {
+  font-size                   : 24px;
+  font-weight                 : bold;
+  margin-bottom               : 10px;
+}
+
+/* Modal Message */
+.complaint-modal-message {
+  font-size                   : 16px;
+  margin-bottom               : 20px;
+}
+
+/* Modal Close Button */
+.complaint-modal-close-button {
+  position                    : absolute;
+  top                         : 10px;
+  right                       : 10px;
+  cursor                      : pointer;
+  font-size                   : 20px;
+  color                       : #98e952;
+}
+
+.complaint-modal-close-button:hover {
+  color                       : #1f26fc;
+}
+
+/* Success Modal Icon */
+.complaint-success-modal-icon {
+  color                       : green;
+  font-size                   : 40px;
+  margin-bottom               : 20px;
+}
+
+/* Error Modal Icon */
+.complaint-error-modal-icon {
+  color                       : rgb(117, 64, 64);
+  font-size                   : 40px;
+  margin-bottom               : 20px;
+}
+.complaint-image-modal {
+  width                       : 100%;
+  height                      : auto;
+  margin-top                  : 20px;
+  border-radius               : 8px;
+}
+.complaint-modal-content {
+  width                       : 400px;
+  padding                     : 20px;
+  background-color            : white;
+  border-radius               : 5px;
+  box-shadow                  : 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.complaint-modal-title {
+  font-size                   : 24px;
+  font-weight                 : bold;
+  margin-bottom               : 10px;
+}
+
+.complaint-modal-message {
+  margin-bottom               : 20px;
+}
+
+.complaint-modal-closeButton {
+  display                     : flex;
+  justify-content             : center;
+  align-items                 : center;
+  width                       : 30px;
+  height                      : 30px;
+  position                    : absolute;
+  top                         : 10px;
+  right                       : 10px;
+  cursor                      : pointer;
+  border-radius               : 50%;
+  background-color            : #f5f5f5;
+  transition                  : background-color 0.3s ease-in-out;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.complaint-modal-closeButton:hover {
+  background-color            : #e0e0e0;
+}
+
+.complaint-modal-icon {
+  margin-right                : 10px;
+}
+
+/* Animation styles */
+
+@keyframes shake {
+  0% { transform              : translateX(0); }
+  20% { transform             : translateX(-10px); }
+  40% { transform             : translateX(10px); }
+  60% { transform             : translateX(-10px); }
+  80% { transform             : translateX(10px); }
+  100% { transform            : translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform              : scale(1); }
+  50% { transform             : scale(1.05); }
+  100% { transform            : scale(1); }
+}
+
+.complaint-image{
+  position                    : absolute;
+  margin-top                  : 50%;
+ width                        : 400px;
+ height                       : 400px;
+ box-shadow                   : 0 10px 10px rgba(0, 0, 0, 0.2);
+}

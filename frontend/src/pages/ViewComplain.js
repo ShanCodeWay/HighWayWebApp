@@ -31,34 +31,34 @@ import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 
 
 function ViewComplain() {
-  const [complaints, setComplaints] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchName, setSearchName] = useState('');
-  const [refreshing, setRefreshing] = useState(false);
+  const [complaints, setComplaints]                             = useState([]);
+  const [searchQuery, setSearchQuery]                           = useState('');
+  const [searchName, setSearchName]                             = useState('');
+  const [refreshing, setRefreshing]                             = useState(false);
   
-  const [loading, setLoading] = useState(false);
-  const [dateTime, setDateTime] = useState(new Date());
-  const [sorted, setSorted] = useState(false);
-  const [complaintValues, setComplaintValues] = useState({});
-  const [currentPage, setCurrentPage] = useState(1);
-  const complaintsPerPage = 4;
-  const indexOfLastComplaint = currentPage * complaintsPerPage;
-  const indexOfFirstComplaint = indexOfLastComplaint - complaintsPerPage;
-  const currentComplaints = complaints.slice(indexOfFirstComplaint, indexOfLastComplaint);
+  const [loading, setLoading]                                   = useState(false);
+  const [dateTime, setDateTime]                                 = useState(new Date());
+  const [sorted, setSorted]                                     = useState(false);
+  const [complaintValues, setComplaintValues]                   = useState({});
+  const [currentPage, setCurrentPage]                           = useState(1);
+  const complaintsPerPage                                       = 4;
+  const indexOfLastComplaint                                    = currentPage * complaintsPerPage;
+  const indexOfFirstComplaint                                   = indexOfLastComplaint - complaintsPerPage;
+  const currentComplaints                                       = complaints.slice(indexOfFirstComplaint, indexOfLastComplaint);
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const totalPages = Math.ceil(complaints.length / complaintsPerPage);
-  const [isProfileDrawerOpen, setIsProfileDrawerOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen]                         = useState(false);
+  const totalPages                                              = Math.ceil(complaints.length / complaintsPerPage);
+  const [isProfileDrawerOpen, setIsProfileDrawerOpen]           = useState(false);
 
-  const inputRef = useRef(null);
-  const [focusedComplaintId, setFocusedComplaintId] = useState(null);
-  const [filteredComplaints, setFilteredComplaints] = useState([]);
-  const [searchId, setSearchId] = useState('');
-  const [expandedComplaints, setExpandedComplaints] = useState({});
-  const [showAlert, setShowAlert] = useState(false);
-  const [cachedData, setCachedData] = useState(null);
-  const [selectedComplaint, setSelectedComplaint] = useState(null);
-  const [noteValue, setNoteValue] = useState('');
+  const inputRef                                                = useRef(null);
+  const [focusedComplaintId, setFocusedComplaintId]             = useState(null);
+  const [filteredComplaints, setFilteredComplaints]             = useState([]);
+  const [searchId, setSearchId]                                 = useState('');
+  const [expandedComplaints, setExpandedComplaints]             = useState({});
+  const [showAlert, setShowAlert]                               = useState(false);
+  const [cachedData, setCachedData]                             = useState(null);
+  const [selectedComplaint, setSelectedComplaint]               = useState(null);
+  const [noteValue, setNoteValue]                               = useState('');
   
 
 
@@ -89,12 +89,12 @@ function ViewComplain() {
   }, []);
 
   const formatDate = (date) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options                                               = { year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString(undefined, options);
   };
 
   const formatTime = (date) => {
-    const options = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    const options                                               = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
     return date.toLocaleTimeString(undefined, options);
   };
 
@@ -118,7 +118,7 @@ function ViewComplain() {
       axios
         .get(`http://192.168.8.141:4000/api/data?key=${searchQuery}`)
         .then((response) => {
-          const data = response.data;
+          const data                                            = response.data;
           setComplaints([data]);
           setFilteredComplaints([data]);
         })
@@ -128,7 +128,7 @@ function ViewComplain() {
         `http://192.168.8.141:4000/api/data?page=${currentPage}&limit=${complaintsPerPage}`,
         {
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type'                                      : 'application/json',
           },
         }
       )
@@ -161,7 +161,7 @@ function ViewComplain() {
   }, [refreshing]);
   
   useEffect(() => {
-    const filteredData = complaints.filter((complaint) =>
+    const filteredData                                          = complaints.filter((complaint) =>
   complaint.key && complaint.key.toLowerCase().includes(searchQuery && searchQuery.toLowerCase())
 );
 setFilteredComplaints(filteredData);
@@ -177,7 +177,7 @@ setFilteredComplaints(filteredData);
     axios
       .get('http://192.168.8.141:4000/api/data')
       .then((response) => {
-        const data = response.data;
+        const data                                              = response.data;
         data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setComplaints(data);
         setLoading(false);
@@ -193,13 +193,13 @@ setFilteredComplaints(filteredData);
   
 
 const handleCheckboxChange = async (e, key) => {
-  const { checked } = e.target;
+  const { checked }                                             = e.target;
 
   setComplaintValues((prevState) => ({
     ...prevState,
     [key]: {
       ...prevState[key],
-      checkbox: checked,
+      checkbox                                                  : checked,
     },
   }));
 
@@ -211,14 +211,14 @@ const handleCheckboxChange = async (e, key) => {
   }
 
   try {
-    // ...rest of the code
+    
   } catch (error) {
     console.error(error);
   }
 };
 
 const handleInputChange = async (e, key) => {
-  const { value } = e.target;
+  const { value }                                               = e.target;
 
   setNoteValue(value); 
   console.log('Input value:', value);
@@ -227,7 +227,7 @@ const handleInputChange = async (e, key) => {
     ...prevState,
     [key]: {
       ...prevState[key],
-      text: value,
+      text                                                      : value,
     },
   }));
 
@@ -239,16 +239,16 @@ const handleInputChange = async (e, key) => {
 
   try {
     await axios.put(`http://192.168.8.141:4000/api/data/${key}`, {
-      checkbox: complaintValues[key]?.checkbox || false,
-      text: value,
+      checkbox                                                  : complaintValues[key]?.checkbox || false,
+      text                                                      : value,
     });
 
     const updatedComplaints = complaints.map((complaint) => {
       if (complaint.key === key) {
         return {
           ...complaint,
-          checkbox: complaintValues[key]?.checkbox || false,
-          text: value,
+          checkbox                                              : complaintValues[key]?.checkbox || false,
+          text                                                  : value,
         };
       }
       return complaint;
@@ -279,27 +279,27 @@ const prevPage = () => {
 };
 
 const renderPageNumbers = () => {
-  const pageNumbers = [];
-  const maxPageNumbers = 5;
-  const totalPages = Math.ceil(complaints.length / complaintsPerPage);
+  const pageNumbers                                             = [];
+  const maxPageNumbers                                          = 5;
+  const totalPages                                              = Math.ceil(complaints.length / complaintsPerPage);
 
-  let startPage = Math.max(1, currentPage - Math.floor(maxPageNumbers / 2));
-  let endPage = Math.min(startPage + maxPageNumbers - 1, totalPages);
+  let startPage                                                 = Math.max(1, currentPage - Math.floor(maxPageNumbers / 2));
+  let endPage                                                   = Math.min(startPage + maxPageNumbers - 1, totalPages);
 
   if (totalPages >= maxPageNumbers) {
     if (endPage === totalPages) {
-      startPage = Math.max(endPage - maxPageNumbers + 1, 1);
+      startPage                                                 = Math.max(endPage - maxPageNumbers + 1, 1);
     } else if (startPage === 1) {
-      endPage = Math.min(startPage + maxPageNumbers - 1, totalPages);
+      endPage                                                   = Math.min(startPage + maxPageNumbers - 1, totalPages);
     }
   }
 
   for (let i = startPage; i <= endPage; i++) {
     pageNumbers.push(
       <button
-        key={i}
-        onClick={() => goToPage(i)}
-        className={currentPage === i ? 'active' : ''}
+        key                                                     = {i}
+        onClick                                                 = {() => goToPage(i)}
+        className                                               = {`log-pagination-button ${currentPage === i ? 'active' : ''}`}
       >
         {i}
       </button>
@@ -313,21 +313,29 @@ const goToPage = (pageNumber) => {
   setCurrentPage(pageNumber);
 };
 
+
 const toggleComplaint = (complaintId) => {
-  setExpandedComplaints((prevState) => ({
-    ...prevState,
-    [complaintId]: !prevState[complaintId],
-  }));
+  setExpandedComplaints((prevState) => {
+    const newState                                              = { ...prevState };
+    for (const key in newState) {
+      if (key !== complaintId) {
+        newState[key]                                           = false;
+      }
+    }
+    newState[complaintId]                                       = !prevState[complaintId];
+    return newState;
+  });
 };
+
 
 
 
 
 const handleDelete = (key) => {
   if (window.confirm('Are you sure you want to delete this complaint?')) {
-    const complaintToDelete = complaints.find((complaint) => complaint.key === key);
+    const complaintToDelete                                     = complaints.find((complaint) => complaint.key === key);
     if (complaintToDelete) {
-      const { note, checkbox, ...rest } = complaintValues[key] || {}; // Add a default empty object
+      const { note, checkbox, ...rest }                         = complaintValues[key] || {};
       const data = {
         ...complaintToDelete,
         note,
@@ -368,9 +376,9 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://192.168.8.141:4000/api/data');
+      const response                                            = await axios.get('http://192.168.8.141:4000/api/data');
 
-      const data = response.data;
+      const data                                                = response.data;
       data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       
       setComplaints(data);
@@ -401,7 +409,7 @@ const handleSearch = () => {
   axios
     .get(`http://192.168.8.141:4000/api/data?key=${searchQuery}`)
     .then((response) => {
-      const data = response.data;
+      const data                                                = response.data;
       setComplaints(data);
       setFilteredComplaints(data);
     })
@@ -409,7 +417,7 @@ const handleSearch = () => {
 };
 
 
-const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
+const handleSubmit                                              = (complaint) => { // Add 'complaint' as a parameter
   if (noteValue.trim() === '') {
     // Handle empty note value
     return;
@@ -417,9 +425,9 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
 
   axios
     .post('http://192.168.8.141:4000/api/log', {
-      data: complaintValues[complaint.key],
-      note: noteValue,
-      checkbox: complaintValues[complaint.key]?.checkbox || false,
+      data                                                      : complaintValues[complaint.key],
+      note                                                      : noteValue,
+      checkbox                                                  : complaintValues[complaint.key]?.checkbox || false,
     })
     .then((response) => {
       // Success notification
@@ -446,90 +454,86 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
      
 
      
-      <div className="container">
+      <div className                                            = "ViewComplain-container">
       
-     
-
-      <div className="left-column">
-
-        <h2>Complaint View page</h2>
-        <p>This is Complaint View page</p>
-      </div>
+    
 
 
 
 
-      <div className="middle-column">
-        <main className="main">
-        <div className='refresh'>
-        <button onClick={handleRefresh}>
+      <div className                                            = "ViewComplain-middle-column">
+      
+        <main className                                         = "ViewComplain-main">
+        <div className                                          = 'ViewComplain-refresh'>
+        <button onClick                                         = {handleRefresh}>
                 <FontAwesomeIcon
-                  icon={faSync}
-                  className={refreshing ? 'spin' : ''}
+                  icon                                          = {faSync}
+                  className                                     = {refreshing ? 'spin' : ''}
                 />
                 Refresh
               </button>
               </div>
+      
+          <div className                                        = "ViewComplain-complaints-container">
+              
 
-
-          <div className="complaints-container">
           {currentComplaints.map((complaint) => (
-   <div key={complaint.key} className={`complaint ${expandedComplaints[complaint.key] ? 'open' : ''}`}>
+   <div key                                                     = {complaint.key} className={` ViewComplain-complaint ${expandedComplaints[complaint.key] ? 'open' : ''}`}>
 
-<div className="checkbox-container">
-  <label className="checkbox-label">
-    <p>Job Done: </p>
+<div className                                                  = "ViewComplain-checkbox-container">
+  <label className                                              = "ViewComplain-checkbox-label">
+    <p>Job Done                                                 : </p>
     <input
-      style={{ display: 'none' }}
-      type="checkbox"
-      name={`checkbox_${complaint.key}`}
-      checked={complaintValues[complaint.key]?.checkbox || false}
+      style                                                     = {{ display: 'none' }}
+      type                                                      = "checkbox"
+      name                                                      = {`checkbox_${complaint.key}`}
+      checked                                                   = {complaintValues[complaint.key]?.checkbox || false}
       onChange={(e) => {
         handleCheckboxChange(e, complaint.key);
       
       }}
     />
-    <span className="custom-checkbox">
+    <span className                                             = "ViewComplain-custom-checkbox">
       {complaintValues[complaint.key]?.checkbox && (
-        <FontAwesomeIcon icon={faCheckSquare} className="checkbox-icon" />
+        <FontAwesomeIcon icon                                   = {faCheckSquare} className="ViewComplain-checkbox-icon" />
       )}
     </span>
   </label>
 </div>
-                <h3>ID: {complaint.key}</h3>
-                <h3>Name: {complaint.name}</h3>
+                <h3>ID                                          : {complaint.key}</h3>
+                <h3>Name                                        : {complaint.name}</h3>
 
                 {expandedComplaints[complaint.key] && (
   <>
-                              <p>Complaint: {complaint.complain}</p>
-                              <p>Email: {complaint.email}</p>
-                              <p>Complaint Type: {complaint.complainType}</p>
-                              <p>Created on: {complaint.createdAt}</p>
-                              <p>Image: {complaint.image}</p>
-                              <p>Note: {complaint.note}</p>
+                              <p>Complaint                      : {complaint.complain}</p>
+                              <p>Email                          : {complaint.email}</p>
+                              <p>Complaint Type                 : {complaint.complainType}</p>
+                              <p>Created on                     : {complaint.createdAt}</p>
+                              <p>Image                          : {complaint.image}</p>
+                              <p>Note                           : {complaint.note}</p>
                     
                    
-                    <div className="input-container">
-                      <div className="input-icon">
-                        <FontAwesomeIcon icon={faStickyNote} />
+                    <div className                              = "ViewComplain-input-container">
+                      <div className                            = "ViewComplain-input-icon">
+                        <FontAwesomeIcon icon                   = {faStickyNote} />
                       </div>
                       <input
-                            type="text"
-                            name={`text_${complaint.key}`}
-                            value={complaintValues[complaint.key]?.text || ''}
-                            onChange={(e) => handleInputChange(e, complaint.key)}
-                            ref={inputRef}
-                            className={`note-input ${focusedComplaintId === complaint.key ? 'focused' : ''}`}
-                            placeholder="Add notes..."
+                            type                                = "text"
+                            name                                = {`text_${complaint.key}`}
+                            value                               = {complaintValues[complaint.key]?.text || ''}
+                            onChange                            = {(e) => handleInputChange(e, complaint.key)}
+                            ref                                 = {inputRef}
+                            className                           = {`ViewComplain-note-input ${focusedComplaintId === complaint.key ? 'focused' : ''}`}
+                            placeholder                         = "Add notes..."
                           />
 
                           <button
-                            className="submit-button"
+                            className                           = "ViewComplain-submit-button"
                             onClick={() => {
+                              handleSubmit(complaint); 
                               handleDelete(complaint.key);
-                              handleSubmit();
                             }}
-                            disabled={!complaintValues[complaint.key]?.checkbox || noteValue === ''}
+                            disabled                            = {!complaintValues[complaint.key]?.checkbox || noteValue === ''}
                             
                           >
                             Submit
@@ -549,19 +553,19 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
 
 
                
-                          <div className="complaint-actions">
-                          <button className="delete-button" onClick={() => handleDelete(complaint.key)}>
-                              <FontAwesomeIcon icon={faTrashAlt} className="delete-icon" /> Delete
+                          <div className                        = "ViewComplain-complaint-actions">
+                          <button className                     = "ViewComplain-delete-button" onClick={() => handleDelete(complaint.key)}>
+                              <FontAwesomeIcon icon             = {faTrashAlt} className="ViewComplain-delete-icon" flip /> Delete
                             </button>
 
-                    <button onClick={() => toggleComplaint(complaint.key)}>
+                    <button onClick                             = {() => toggleComplaint(complaint.key)} className="ViewComplain-more-button">
                       {expandedComplaints[complaint.key] ? (
                           <>
-                            Hide.. <FontAwesomeIcon icon={faAngleUp} className="arrow-icon" />
+                            Hide.. <FontAwesomeIcon icon        = {faAngleUp} className="ViewComplain-arrow-icon" beat  />
                           </>
-                        ) : (
+                        )                                       : (
                           <>
-                            Click more <FontAwesomeIcon icon={faAngleDown} className="arrow-icon" />
+                            Click more <FontAwesomeIcon icon    = {faAngleDown} className="ViewComplain-arrow-icon" beat  onClick={() => toggleComplaint(complaint.key)}/>
                           </>
                         )}
                       </button>
@@ -576,45 +580,68 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
             ))}
           </div>
           
-          
+          <div className                                        = "ViewComplain-pagination">
+        <button
+          onClick                                               = {prevPage}
+          disabled                                              = {currentPage === 1}
+          className                                             = "ViewComplain-pagination-button"
+        >
+          Previous
+        </button>
+        {renderPageNumbers()}
+        <button
+          onClick                                               = {nextPage}
+          disabled                                              = {currentPage === totalPages}
+          className                                             = "ViewComplain-pagination-button"
+        >
+          Next
+        </button>
+
+       
+
+
+      </div>
         </main>
+
+       
         </div>
-        <div className="right-column">
-        <div className="ViewComplaint-datetime-container">
-                  <span className="ViewComplaint-date-text">{formatDate(dateTime)}</span>
-                  <span className="ViewComplaint-time-text">{formatTime(dateTime)}</span>
+        <div className                                          = "ViewComplain-right-column">
+       
+        <div className                                          = "ViewComplain-datetime-container">
+                  <span className                               = "ViewComplain-date-text">{formatDate(dateTime)}</span>
+                  <span className                               = "ViewComplain-time-text">{formatTime(dateTime)}</span>
                 </div>
         
-        <div className="search-container">
-          <div className='faq-search-container'>
+        <div className                                          = "ViewComplain-search-container">
+          <div className                                        = 'ViewComplain-search-container'>
                   <input
-            type="text"
-            placeholder="Search by ID"
-            value={searchQuery}
-            onChange={(e) =>  setSearchQuery(e.target.value)}
+            type                                                = "text"
+            placeholder                                         = "Search by ID"
+            value                                               = {searchQuery}
+            onChange                                            = {(e) =>  setSearchQuery(e.target.value)}
             
           />
        
        </div>
-  <button className="search-button"  onClick={handleSearch}>
+  <button className                                             = "ViewComplain-search-button"  onClick={handleSearch}>
   
-  <FontAwesomeIcon icon={faSearch} />
+  <FontAwesomeIcon icon                                         = {faSearch} beat />
             
          
      _Search by ID
   </button>
 </div>
 
-<div className="search-container">
+<div className                                                  = "ViewComplain-search-container">
  
 <input
-  type="text"
-  placeholder="Search by Name"
-  value={searchName}
-  onChange={(e) => setSearchName(e.target.value)}
+  type                                                          = "text"
+  placeholder                                                   = "Search by Name"
+  value                                                         = {searchName}
+  onChange                                                      = {(e) => setSearchName(e.target.value)}
 />
-  <button className="search-button" >
-  <FontAwesomeIcon icon={faSearch} />
+  <button className                                             = "ViewComplain-search-button" >
+  <FontAwesomeIcon icon                                         = {faSearch} beat  />
      _Search by Name
     
   </button>
@@ -625,7 +652,7 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
 
 
 
-        <button className="sort-button" >
+        <button className                                       = "ViewComplain-sort-button" >
           Sort by ID {sorted ? <span>&#9650;</span> : <span>&#9660;</span>}
         </button>
         
@@ -634,23 +661,7 @@ const handleSubmit = (complaint) => { // Add 'complaint' as a parameter
 
 
 
-        <div className="pagination">
-  <button
-    onClick={prevPage}
-    disabled={currentPage === 1}
-    className="pagination-button"
-  >
-    Previous
-  </button>
-  {renderPageNumbers()}
-  <button
-    onClick={nextPage}
-    disabled={currentPage === totalPages}
-    className="pagination-button"
-  >
-    Next
-  </button>
-</div>
+       
    
   </>
 );

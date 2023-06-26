@@ -1,333 +1,176 @@
-body {
-  margin                    : 0;
-  font-family               : -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+.ViewComplain-body{
+  margin                        : 0;
+  font-family                   : -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing    : antialiased;
-  -moz-osx-font-smoothing   : grayscale;
-  background-color          : #e89898;
-  max-width                 : auto;
+  -webkit-font-smoothing        : antialiased;
+  -moz-osx-font-smoothing       : grayscale;
+  background-color              : #ccce49;
+  max-width                     : 100%;
+  height                        : auto;
 }
 
 
 
-.container {
-  display                   : flex;
-  flex-wrap                 : wrap;
-  background-color          : #de6161;
-  color                     : #1c1515;
-  border-radius             : 0;
-  margin                    : 0;
-  justify-content           : center;
-  margin-top                : 0;
-  margin-bottom             : 0%;
-  
-}
-.middle {
-  background-color: #35d963;
-  display: flex;
-  flex-direction: column;
-  min-height: 50vh;
-}
-
-.left-column,
-.middle-column,
-.right-column {
-  flex-basis                : 100%;
+.ViewComplain-container {
+  position                      : relative;
+  display                       : flex;
+  flex-wrap                     : wrap;
+  background-color              : #fc8585;
+  color                         : #1c1515;
+  border-radius                 : 0;
+  margin                        : 0;
+  justify-content               : center;
+  padding-top                   : 1.4%;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+  height                        : auto;
   
 }
 
-.left-column {
-  background-color          : #a70707;
-  padding                   : 30%;
-  width                     : auto;
-  margin-top                : -20px;
-  margin-bottom             : -20px;
+
+.ViewComplain-left-column,
+.ViewComplain-middle-column,
+.ViewComplain-right-column {
+  flex-basis                    : 100%;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.middle-column {
-  background-color          : #adfca8;
-  justify-content           : center;
+.ViewComplain-left-column {
+  background-color              : #cd9d9d;
+  padding                       : 30%;
+  width                         : auto;
+  margin-top                    : -20px;
+  margin-bottom                 : -20px;
+}
+
+.ViewComplain-middle-column {
+  position                      : relative;
+  
+  justify-content               : center;
  
-  margin-left               : 0;
-  margin-right              : 0;
-  width                     : 40%;
-  margin-top                : -20px;
-  margin-bottom             : -20px;
+  margin-left                   : 0;
+  margin-right                  : 0;
+  width                         : 40%;
+  margin-top                    : -20px;
+  margin-bottom                 : -20px;
+  min-height                    : 700px;
+  max-height                    : auto;
+
+  overflow-y                    : auto;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+  background                    : linear-gradient(135deg, #52ffc5 0%, #e2ffb3 100%);
+  background-size               : 400% 400%;
+  animation                     : aaa 4s ease infinite;
+                  
+
+
   
 }
 
-.right-column {
-  background-color          : #a70707;
-  margin-top                : -20px;
-  margin-bottom             : -20px;
-  width                     : auto;
-  justify-content           : left;
-  padding-left              : 100px;
-  padding-right             : 100px;
+@keyframes aaa {
+                      
+  0% { background-position      : 0% 50%; }
+                    
+  50% { background-position     : 100% 50%; }
+                    
+  100% { background-position    : 0% 50%; }
+                  
+}
+.ViewComplain-middle-column::-webkit-scrollbar {
+  display                       : none;
 }
 
-.side-container {
-  flex-basis                : 20%;
-  padding                   : 20px;
-  background-color          : #830a0a;
-  position                  : sticky;
-}
-
-.main {
-  flex-basis                : 70%;
-  padding                   : 20px;
-}
-
-.header {
-  background-color          : #283593;
-  color                     : #ffffff;
-  padding                   : 20px;
-  text-align                : center;
-  font-size                 : 20px;
-}
-
-.logo {
-  display                   : flex;
-  align-items               : center;
-  justify-content           : center;
-  position                  : absolute;
-}
-
-.logo img {
-  width                     : 300px; /* Adjust the width as needed */
-  height                    : 200px; /* Adjust the height as needed */
-  object-fit                : contain;
-}
-
-
-
-.ribbon {
-  background-color          : #ff5722;
-  padding                   : 10px;
-  display                   : inline-block;
-  margin-bottom             : 0px;
-}
-
-.ribbon span {
-  font-weight               : bold;
-  color                     : #ffffff;
-  font-size                 : 20px;
-}
-
-.navbar {
-  background-color          : #7da4c7;
-  padding                   : 20px;
-  position                  : relative;
-}
-
-.navbar ul {
-  list-style-type           : none;
-  margin                    : 0;
-  padding                   : 0;
-}
-
-.navbar li {
-  display                   : inline-block;
-  margin-right              : 7px;
-}
-
-.navbar a {
-  position                  : relative;
-  color                     : #f0e8e8;
-  text-decoration           : none;
-  font-weight               : bold;
-  font-size                 : large;
-  transition                : color 0.3s; /* Add transition for smooth color change */
-  transition: transform 0.3s ease;
-}
-
-.navbar a:hover {
-  color                     : #f47b7b; /* Change text color to white on hover */
-  font-size                 : 20px;
-}
-
-.navbar .icon {
-  margin-right              : 5px;
-  margin-left               : 60px;
-  color                     : #e0e0e0;
-  font-size                 : 20px;
-  margin-top                : 0px;
-  cursor                    : pointer;
-  transition: transform 0.3s ease;
-}
-
-.navbar .icon:hover {
-  transition                : color 0.3s ease-in-out;
-  color                     : #ee6666; /* Change icon color to white on hover */
-  transform: scale(1.2) rotateY(180deg);
-}
-
-
-
-
-
-
-
-.navbar .profile-icon {
-  margin-left               : 10px;
-  cursor                    : pointer;
-}
-
-
-.profile-icon {
-  position                  : absolute;
-  top                       : 0;
-  right                     : 0;
-  padding                   : 10px;
-  display                   : flex;
-  align-items               : center;
-  cursor                    : pointer;
-  color                     : #e0e0e0;
-  font-size                 : 20px;
-  margin-top                : 10px;
-}
-
-.profile-icon:hover {
-  transition                : color 0.3s ease-in-out;
-  color                     : #ee6666; /* Change icon color to white on hover */
-  transform: scale(1.2);
-}
-
-
-.ProfileDrawer {
-  position                  : absolute;
-  top                       : 240px;
-  right                     : -240px;
-  width                     : 240px;
-  height                    : 30%;
-  background-color          : #f3fb9e;
-  transform                 : translateX(100%);
-  transition                : transform 0.3s ease-in-out;
-  z-index                   : 999;
-  overflow-y                : auto;
-}
-
-.ProfileDrawer.open {
-  transform                 : translateX(0%);
-  right                     : 0;
-}
-
-.ProfileDrawer ul {
-  list-style-type           : none;
-  padding                   : 0;
-  margin                    : 0;
-}
-
-.ProfileDrawer li {
-  padding                   : 10px 20px;
-  border-bottom             : 1px solid #ccc;
-  cursor                    : pointer; /* Add cursor pointer */
-  transition                : background-color 0.3s ease-in-out; /* Add transition */
-}
-
-.ProfileDrawer li:hover {
-  background-color          : #ccc; /* Change background color on hover */
-}
-
-.ProfileDrawer li:last-child {
-  border-bottom             : none;
-}
-
-
-
-.open {
-  display                   : block;
-}
-
-.close {
-  display                   : none;
-}
-
-.drawer-menu {
-  color                     : #bb0707;
-  background-color          : #5bedf5;
-  position                  : absolute;
-  top                       : 240px;
-  width                     : 240px;
-  height                    : 30%;
-  transform                 : translateX(100%);
-  transition                : transform 0.3s ease-in-out; /* Updated duration */
-  z-index                   : 999;
-  overflow-y                : auto;
-  left                      : -230px;
+.ViewComplain-right-column {
+  
+  margin-top                    : -20px;
+  margin-bottom                 : -20px;
+  width                         : auto;
+  justify-content               : left;
+  padding-left                  : 100px;
+  padding-right                 : 100px;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+  background                    : linear-gradient(225deg, #ffcdc9 15%, #e5ff66 100%);
+  background-size               : 400% 400%;
+  animation                     : sss 4s ease infinite;
+                  
  
+
+}
+@keyframes sss {
+                      
+  0% { background-position      : 0% 50%; }
+                    
+  50% { background-position     : 100% 50%; }
+                    
+  100% { background-position    : 0% 50%; }
+                  
+}
+
+.ViewComplain-side-container {
+  flex-basis                    : 20%;
+  padding                       : 20px;
+  background-color              : #830a0a;
+  position                      : sticky;
+}
+
+.ViewComplain-main {
+  position                      : relative;
+  flex-basis                    : 50%;
+  padding                       : 20px;
+  max-height                    : 500px;
+  min-height                    : 500px;
+  
 }
 
 
-.drawer-menu ul {
-  list-style-type           : none;
-  padding                   : 0;
-  margin                    : 0;
-}
-
-.drawer-menu li {
-  padding                   : 10px 20px;
-  border-bottom             : 1px solid #ccc;
-  cursor                    : pointer; /* Add cursor pointer */
-  transition                : background-color 0.3s ease-in-out;
-}
-
-.drawer-menu li:hover {
-  background-color          : #ccc; /* Change background color on hover */
-}
-
-.drawer-menu li:last-child {
-  border-bottom             : none;
-}
 
 
 
-.open {
-  display                   : block;
-}
-
-.close {
-  display                   : none;
-}
-
-
-.complaints-container {
-  display                   : grid;
-  grid-template-columns     : repeat(auto-fit, minmax(500px, 1fr));
-  grid-gap                  : 30px;
-  justify-content           : center;
-  margin-left               : 100PX;
+.ViewComplain-complaints-container {
+  position                      : relative;
+  display                       : grid;
+  grid-template-columns         : repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap                      : 30px;
+  justify-content               : center;
+  margin-left                   : 100PX;
+  
   
  
 }
 
-.complaint {
-  border                    : 1px solid #e0e0e0;
-  padding                   : 20px;
-  background-color          : #ffffff;
-  box-shadow                : 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius             : 50px;
-  padding-left              : 60PX;
-  padding-left              : 60PX;
- 
+.ViewComplain-complaint {
+  position                      : relative;
+  border                        : 1px solid #e0e0e0;
+  padding                       : 20px;
+  background-color              : #ffffff;
+  box-shadow                    : 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius                 : 50px;
+  padding-left                  : 60PX;
+  padding-left                  : 60PX;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
  
   
 }
 
-.complaint.open {
-  background-color          : #f3fb9e;
+.ViewComplain-complaint.open {
+
+  position                      : relative;
+  background-color              : #f3fb9e;
+  z-index                       : 1;
+  padding-bottom                : 20px;
+  margin-bottom                 : 30px;
 }
 
-.complaint h3 {
-  margin                    : 0;
-  margin-bottom             : 10px;
+.ViewComplain-complaint h3 {
+  margin                        : 0;
+  margin-bottom                 : 10px;
+  
 }
 
-.complaint-actions
+.ViewComplain-complaint-actions
 {
-  display                   : flex;
-  margin-left               : 200px;
+  display                       : flex;
+  margin-left                   : 250px;
   
   
   
@@ -335,89 +178,78 @@ body {
 
 
 
-.complaint button,
-.delete-button {
-  padding                   : 5px 10px;
-  background-color          : #35d963;
-  color                     : #ffffff;
-  border                    : none;
-  cursor                    : pointer;
-  margin-left               : 20px;
-  transition                : background-color 0.3s ease-in-out; /* Add transition */
+
+.ViewComplain-arrow-icon {
+  margin-left                   : 5px;
 }
 
-.complaint button:hover,
-.delete-button:hover {
-  background-color          : #274c92; /* Change background color on hover */
-}
-
-.arrow-icon {
-  margin-left               : 5px;
-}
-
-.delete-icon {
-  margin-right              : 5px;
+.ViewComplain-delete-icon {
+  margin-right                  : 5px;
 }
 
 
 
-.checkbox-container {
-  display                   : flex;
-  align-items               : center;
-  position                  : absolute;
-  margin-left               : 290px;
+.ViewComplain-checkbox-container {
+  display                       : flex;
+  align-items                   : center;
+  position                      : absolute;
+  margin-left                   : 290px;
  
 
 }
 
-.checkbox-label {
-  display                   : flex;
-  align-items               : center;
+.ViewComplain-checkbox-label {
+  display                       : flex;
+  align-items                   : center;
   
 }
 
-.custom-checkbox {
-  display                   : inline-block;
-  position                  : relative;
-  width                     : 18px;
-  height                    : 18px;
-  border                    : 1px solid #888;
-  border-radius             : 3px;
-  margin-right              : 10px;
-  margin-left               : 10px;
+.ViewComplain-custom-checkbox {
+  display                       : inline-block;
+  position                      : relative;
+  width                         : 18px;
+  height                        : 18px;
+  border                        : 1px solid #888;
+  border-radius                 : 3px;
+  margin-right                  : 10px;
+  margin-left                   : 10px;
 }
 
-.checkbox-icon {
-  position                  : absolute;
-  top                       : 50%;
-  left                      : 50%;
-  transform                 : translate(-50%, -50%);
-  color                     : #44a6e8;
+.ViewComplain-checkbox-icon {
+  position                      : absolute;
+  top                           : 50%;
+  left                          : 50%;
+  transform                     : translate(-50%, -50%);
+  color                         : #44a6e8;
 }
 
-.input-container {
-  position                  : relative;
-  display                   : flex;
-  align-items               : center;
+.ViewComplain-input-container {
+  position                      : relative;
+  display                       : flex;
+  align-items                   : center;
+  justify-content               : center;
+  border-radius                 : 20px;
 }
 
-.input-icon {
-  position                  : absolute;
+.ViewComplain-input-icon {
+  position                      : relative;
 
-  top                       : 50%;
-  left                      : 260px;
-  transform                 : translateY(-50%);
+  justify-content               : center;
+align-items                     : center;
+  
+  left                          : 260px;
+  
 }
 
-.input-icon svg {
-  color                     : #888;
+.ViewComplain-input-icon svg {
+  color                         : #888;
 }
 
 input[type='text'] {
-  padding                   : 10px;
-  margin                    : 15px;
-  width                     : 250px;
-  padding-left              : 30px; /* Adjust left padding to accommodate the icon */
+  padding                       : 10px;
+  margin                        : 15px;
+  width                         : 250px;
+  padding-left                  : 30px;
 }
 
 
@@ -425,189 +257,339 @@ input[type='text'] {
 
 
 
-.search-container {
-  margin-bottom             : 20px;
-  margin-top                : 100px;
+.ViewComplain-search-container {
+  flex-direction                : column;
+  margin-top                    : 50px;
+  padding-left                  : 0;
+  position                      : relative;
+  display                       : flex;
+  align-items                   : center;
+  width                         : 400px;
+  border-color                  : #2e68a1;
+  border-radius                 : 20px;
+  background-color              : #70efc700;
+  left                          : 0;
 }
 
-.search-container input[type="text"] {
-  padding-left              : 80px;
-  padding-right             : 80px;
+.ViewComplain-search-container input[type="text"] {
+  position                      : relative;
+  background-color              : #fcfcfc;
+  border-color                  : #2e68a1;
+  border-radius                 : 20px;
+  border-width                  : 5px;
+  background                    : linear-gradient(45deg, #dbdbff 18%, #ffffff 39%, #c3c9ee 88%);
+  padding-left                  : -5px;
+  font-size                     : 18px;
+  font-weight                   : bold;
+  width                         : 400px;
+  animation                     : search 3s ease infinite;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+@keyframes search  {
+                      
+  0% { background-position      : 0% 50%; }
+                    
+  50% { background-position     : 100% 50%; }
+                    
+  100% { background-position    : 0% 50%; }
+                  
+}
+  
+
+
+.ViewComplain-search-icon {
+  padding-left                  : 20px;
+  padding-right                 : 80px;
+  position                      : absolute;
+ color                          : #070707;
+
+  
+
+}
+
+.ViewComplain-search-button{
+  position                      : relative;
+  background-color              : #033798;
+  border-color                  : #2e68a1;
+  border-radius                 : 20px;
+  border-width                  : 5px;
+  color                         : #ffffff;
+  font-size                     : 13px;
+  font-weight                   : bold;
+  width                         : 100px;
+  padding                       : 4px;
+  padding-left                  : 6ps;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin-left                   : 20px;
   
 }
 
-.search-icon {
-  padding-left              : 20px;
-  padding-right             : 80px;
-  position                  : absolute;
- color                      : #070707;
-
-  
-
+.ViewComplain-search-button:hover {
+  transition                    : background-color 0.3s ease-in-out;
+  background-color              : #44a6e8;
 }
-
-.search-button,
-.sort-button {
-  padding                   : 10px;
-  padding-left              : 20px;
-  background-color          : #ff5722;
-  color                     : #ffffff;
-  border                    : none;
-  cursor                    : pointer;
-  margin-bottom             : 20px;
-  margin-left               : 20px;
-  cursor                    : pointer;
+.ViewComplain-sort-button {
+  margin-top                    : 5px;
+  position                      : relative;
+  background-color              : #06005c;
+  border-color                  : #080808;
+  border-radius                 : 20px;
+  color                         : #ffffff;
+  font-size                     : 15px;
+  font-weight                   : bold;
+  padding                       : 10px;
+ margin-left                    : 20px;
+ box-shadow                     : 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 button.search-button:hover.search-button,
-.sort-button:hover {
-  transition                : background-color 0.3s ease-in-out;
-  background-color          : #44a6e8; /* Change icon color to white on hover */
+.ViewComplain-sort-button:hover {
+  transition                    : background-color 0.3s ease-in-out;
+  background-color              : #44a6e8;
 }
 
-.pagination {
-  margin-top                : 0px;
-  text-align                : right;
-  padding-right             : 30%;
-  padding-bottom            : 0px;
-  transition                : background-color 0.3s ease;
+.ViewComplain-pagination {
+
+  position                      : relative;
+  display                       : flex;
+  justify-content               : flex-end;
+  align-items                   : flex-end;
+ margin-left                    : 160%;
+ padding-bottom                 : 20%;
+ 
 }
 
-.pagination button {
-  position                  : sticky;
-  padding                   : 10px;
-  background-color          : #4e91c8;
-  color                     : #070707;
-  border                    : none;
-  cursor                    : pointer;
-  margin-right              : 10px;
+.ViewComplain-pagination-button {
+  padding                       : 8px 12px;
+  margin                        : 0 5px;
+  background-color              : #f1f1f1;
+  color                         : #333;
+  border                        : none;
+  border-radius                 : 10px;
+  cursor                        : pointer;
+  font-size                     : 15px;
+  font-weight                   : bold;
+  transition                    : background-color 0.3s;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.pagination button.active {
-  cursor                    : pointer;
-  font-weight               : bold;
-  text-decoration           : underline;
-  background-color          : #5bedf5;
+.ViewComplain-pagination-button:hover {
+  background-color              : #ddd;
 }
 
-.pagination button.active:hover {
-  cursor                    : pointer;
-  font-weight               : bold;
-  text-decoration           : underline;
-  background-color          : #dd7622;
+.ViewComplain-pagination-button:disabled {
+  background-color              : #ccc;
+  cursor                        : not-allowed;
 }
 
-.pagination-button:hover {
-  cursor                    : pointer;
-  background-color          : #aaa;
+.ViewComplain-pagination-button.active {
+  background-color              : #007bff;
+  color                         : #fff;
 }
 
-.pagination-button[disabled] {
-  opacity                   : 0.5;
-  cursor                    : not-allowed;
-}
-
-.ViewComplaint-datetime-container {
-  display: flex;
-    position: absolute;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 30px;
-    margin-left: 0;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 400px;
-    background-color: #cbe1f2;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 5px solid #0f0fa2;
-
-}
-
-.ViewComplaint-time-text {
-  font-size: 20px;
-  font-weight: bold;
-  color: #0b55a3;
-  padding-left: 10px;
-}
-.ViewComplaint-date-text {
-  font-size: 20px;
-  font-weight: bold;
-  color: #0b55a3;
+.ViewComplain-pagination-container {
+  display                       : flex;
+  justify-content               : center;
+  align-items                   : center;
+  margin-top                    : 20px;
 }
 
 
-.footer {
-  background-color          : #283593;
-  color                     : #ffffff;
-  padding                   : 20px;
-  text-align                : center;
-  width                     : 100%;
-  
+.ViewComplain-datetime-container {
+  display                       : flex;
+    position                    : absolute;
+    padding-left                : 10px;
+    padding-right               : 10px;
+    margin-top                  : 30px;
+    margin-left                 : 0;
+    align-items                 : center;
+    justify-content             : center;
+    height                      : 50px;
+    width                       : 400px;
+    background-color            : #cbe1f2;
+    border-radius               : 20px;
+    box-shadow                  : 0 2px 4px rgba(0, 0, 0, 0.1);
+    border                      : 5px solid #0f0fa2;
+    box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+
 }
+
+.ViewComplain-time-text {
+  font-size                     : 20px;
+  font-weight                   : bold;
+  color                         : #0b55a3;
+  padding-left                  : 10px;
+}
+.ViewComplain-date-text {
+  font-size                     : 20px;
+  font-weight                   : bold;
+  color                         : #0b55a3;
+}
+
+
 
 .spin {
-  animation                 : spin 0.5s linear infinite;
+  animation                     : spin 0.5s linear infinite;
 }
 
 @keyframes spin {
   0% {
-    transform               : rotate(0deg);
+    transform                   : rotate(0deg);
   }
   100% {
-    transform               : rotate(360deg);
+    transform                   : rotate(360deg);
   }
 }
 
-.refresh {
-  position                  : relative;
-  display                   : flex;
-  justify-content           : center;
-  color                     : #5805ff;
-  margin-left               : 320px;
+
+.refresh-container {
+  position                      : sticky;
+  left                          : 20px;
+  top                           : 90%;
+  transform                     : translateY(-60%);
+  z-index                       : 9999;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.ViewComplain-refresh {
+  position                      : sticky;
+  left                          : 40%;
+  top                           : 5%;
+  transform                     : translateY(-50%);
+  z-index                       : 8899;
+  display                       : flex;
+  justify-content               : center;
+  color                         : #e4dcf4;
+  margin-left                   : 140%;
   
 }
 
-.refresh button {
-  display                   : flex;
-  align-items               : center;
-  font-size                 : 20px;
-  font-weight               : bold;
-  color                     : #0f0fa2;
-  border-radius             : 10px;
-  
-   /* Adjust the font size as desired */
+.ViewComplain-refresh button {
+  position                      : absolute;
+  margin-bottom                 : 0%;
+  align-items                   : center;
+  width                         : 100px;
+  font-size                     : 20px;
+  font-weight                   : bold;
+  color                         : #ffffff;
+  border-radius                 : 10px;
+  margin-right                  : 60%;
+  background-color              : #033798;
+  border-color                  : #2e68a1;
+  border-radius                 : 20px;
+  border-width                  : 5px;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .refresh button .spin {
-  margin-right              : 5px; /* Adjust the spacing between icon and text */
+  margin-right                  : 5px;
 }
 
 
 @media (min-width: 768px) {
-  .container {
-    flex-wrap               : nowrap;
+  .ViewComplain-container {
+    flex-wrap                   : nowrap;
   }
 
-  .left-column,
-  .right-column {
-    flex-basis              : 50%;
+  .ViewComplain-left-column,
+  .ViewComplain-right-column {
+    flex-basis                  : 50%;
   }
 
-  .middle-column {
-    flex-basis              : calc(100% - 400px);
-    padding-left            : 150px;
-    padding-right           : 250px;
+  .ViewComplain-middle-column {
+    flex-basis                  : calc(100% - 400px);
+    padding-left                : 150px;
+    padding-right               : 250px;
     
   }
 }
 
 @media (max-width: 767px) {
-  .middle-column {
-    flex-basis              : 100%;
-    padding                 : 20px;
-    margin                  : 0;
+  .ViewComplain-middle-column {
+    flex-basis                  : 100%;
+    padding                     : 20px;
+    margin                      : 0;
   }
 }
 
+.ViewComplain-submit-button{
+  background                    : linear-gradient(90deg, #0400ff 0%, #001457 100%);
+  font-weight                   : bold;
+  color                         : #fff;
+  border-radius                 : 25px;
+  border-color                  : #000959;
+  padding                       : 5px;
+  padding-left                  : 10px;
+  padding-right                 : 10px;
+  font-size                     : 15px;
+ 
+  cursor                        : pointer;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ViewComplain-submit-button:hover {
+  background-color              : #007bff;
+}
+
+
+.ViewComplain-more-button{
+  background-color              : #49ff82;
+  border-width                  : 5px;
+  border-radius                 : 20px;
+  margin-right                  : 10px;
+  font-size                     : 15px;
+  color                         : #ffebed;
+  font-weight                   : bold;
+  width                         : 100px;
+  border-color                  : #185091;
+  cursor                        : pointer;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ViewComplain-more-button:hover {
+  background-color              : #007bff;
+}
+
+.ViewComplain-actions {
+  display                       : flex;
+  position                      : relative;
+  margin-left                   : 200px;
+  padding-left                  : 20px;
+}
+
+
+
+.ViewComplain-delete-button {
+  background-color              : #e95858;
+  border-width                  : 5px;
+  border-radius                 : 20px;
+  margin-right                  : 10px;
+  font-size                     : 15px;
+  color                         : #ffebed;
+  font-weight                   : bold;
+  width                         : 100px;
+  border-color                  : #185091;
+  box-shadow                    : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.ViewComplain-delete-button:hover {
+  background-color              : #700f0f;
+}
+
+.ViewComplain h3{
+  padding-left                  : 10%;
+  margin                        : 0;
+  margin-bottom                 : 10px;
+  color                         : #033798;
+  font-weight                   : bold;
+  font-size                     : 25px;
+}
+.ViewComplain p{
+  padding-left                  : 10%;
+  margin                        : 0;
+  margin-bottom                 : 10px;
+  color                         : #033798;
+  font-weight                   : bold;
+  font-size                     : 25px;
+}

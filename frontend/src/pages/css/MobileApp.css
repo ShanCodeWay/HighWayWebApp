@@ -1,76 +1,172 @@
 .mobileapp-body{
-    position: abs;
-   max-width: 100%;
-   max-height: fit-content;
-   min-height: 500px;
-   ;
-   background-color: antiquewhite; 
+  display                     : flex;
+  flex-direction              : row;
+  position                    : abs;
+ max-width                    : 100%;
+ max-height                   : fit-content;
+ min-height                   : 500px;
+ ;
+ background                   : linear-gradient(135deg, #fafafa 26%, #e6e6e6 48%, #b3b3b3 78%);
+ background-size              : 400% 400%;
+ animation                    : body 8s ease infinite;
+                 
+
+ padding                      : 20px;
+}
+@keyframes body {
+                     
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+.mobileapp-container {
+  display                     : flex;
+  flex-direction              : row;
+  align-items                 : center;
+  justify-content             : center;
+  
+  border-radius               : 10px;
+  box-shadow                  : 0 0 5px rgba(0, 0, 0, 0.2);
+ 
+  width                       : 50%;
+  padding                     : 20px;
+ 
+  min-height                  : 400px;
+
+  background                  : linear-gradient(45deg, #ffffff 0%, #d8d8f3 74%, #ffffff 100%);
+background-size               : 400% 400%;
+animation                     : animationName 3s ease infinite;
+  }
+  
+@keyframes body {
+                     
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+.mobileapp-right-container{
+  position                    : absolute;
+  display                     : flex;
+  flex-direction              : column;
+ 
+  
+  margin-right                : -100%;
+  margin-top                  : auto;
+  
+  border-radius               : 10px;
+  box-shadow                  : 0 0 5px rgba(0, 0, 0, 0.2);
+ 
+  width                       : 40%;
+  padding                     : 44px;
+  
+  min-height                  : 400px;
+
+  background                  : linear-gradient(45deg, #ffffff 0%, #d8d8f3 74%, #ffffff 100%);
+background-size               : 400% 400%;
+animation                     : animationName 3s ease infinite;
 }
 
 
 
+.mobileapp-datetime-container {
+  display                     : flex;
+    position                  : relative;
+   
+    align-items               : center;
+    justify-content           : center;
+    margin-left               : 12px;
+    height                    : 50px;
+    width                     : 300px;
+    background                : linear-gradient(45deg, #dbdbff 18%, #ffffff 39%, #c3c9ee 58%);
+    background-size           : 400% 400%;
+    animation                 : date 7s ease infinite;
+                    
+   
+    border-radius             : 20px;
+    box-shadow                : 0 2px 4px rgba(0, 0, 0, 0.1);
+    border                    : 5px solid #0f0fa2;
+    margin-top                : -25px;
+    box-shadow                : 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+}
 
-.mobileapp-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e7dddd;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    padding: 0px;
-    margin: auto auto; /* This will center the container horizontally */
-    margin-left:0;
-    min-height: 400px;
-  }
+.mobileapp-time-text,
+.mobileapp-date-text {
+  font-size                   : 20px;
+  font-weight                 : bold;
+  color                       : #0b55a3;
+}
 
-  .mobileapp-datetime-container {
-    display: flex;
-      position: absolute;
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-top: -22%;
-      margin-left: 70%;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      width: 400px;
-      background-color: #cbe1f2;
-      border-radius: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border: 5px solid #0f0fa2;
-  
-  }
-  
-  .mobileapp-time-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0b55a3;
-    padding-left: 10px;
-  }
-  .mobileapp-date-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0b55a3;
-  }
+.mobileapp-time-text {
+  padding-left                : 10px;
+}
 
-  .mobileapp-button {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s ease;
-  }
+.mobileapp-date-text {
+  padding-right               : 10px;
+}
+
+
+
+.mobileapp-button-container {
+  display                     : flex;
+  flex-direction              : column;
+  justify-content             : center;
+  align-items                 : center;
+  margin-top                  : 20px;
+ padding-left                 : 50px;
+}
+
+.mobileapp-button {
+  display                     : flex;
+  position                    : relative;
+  align-items                 : center;
+  justify-content             : center;
+  text-decoration             : none;
   
-  .mobileapp-button:hover {
-    background-color: #ccc;
-  }
-  
-  .mobileapp-icon {
-    margin-right: 10px;
-  }
-  
+  padding                     : 15px 30px;
+  background                  : linear-gradient(90deg, #3037f8 0%, #72ead1 100%);
+  color                       : #fff;
+  border-radius               : 20px;
+  margin-right                : 20px;
+  transition                  : background-color 0.3s ease;
+  font-weight                 : bold;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mobileapp-button:hover {
+  background-color            : #0056b3;
+}
+
+.mobileapp-faq-button {
+  margin-right                : 10px;
+  font-weight                 : bold;
+}
+
+.mobileapp-contact-button {
+  margin-right                : 10px;
+  font-weight                 : bold;
+}
+
+.mobileapp-button span {
+  font-weight                 : bold;
+}
+
+.mobileapp-button-icon {
+  font-size                   : 18px;
+  margin-right                : 8px;
+}
+
+.mobileapp-image {
+  width                       : 280px;
+  height                      : 250px;
+  margin-right                : 5px;
+  border-radius               : 30px;
+  box-shadow                  : 0 4px 10px rgba(0, 0, 0, 0.2);
+}

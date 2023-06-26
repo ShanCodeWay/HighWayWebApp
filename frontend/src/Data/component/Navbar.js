@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -25,75 +25,77 @@ import {
 
 const Navbar = ({ isProfileDrawerOpen, handleProfileDrawerClick, isDrawerOpen, setIsDrawerOpen }) => {
   return (
-    <nav className="navbar">
+    <nav className                  = "navbar">
       <ul>
         <li>
-          <div className="icon" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-            <FontAwesomeIcon icon={faBars} />
+          <div className            = "icon" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+            <FontAwesomeIcon icon   = {faBars} />
           </div>
         </li>
 
-        <Link to="/">
+        <Link to                    = "/">
           <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faHome} className="icon" beat /> Home
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faHome} className="icon" beat /> Home
             </a>
           </li>
         </Link>
 
-        <Link to="/Contacts">
+        <Link to                    = "/Contacts">
           <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faAddressBook} className="icon" beat /> Contacts
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faAddressBook} className="icon" beat /> Contacts
             </a>
           </li>
         </Link>
-        <Link to="/FAQ">
+        <Link to                    = "/FAQ">
           <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faComments} className="icon" beat /> FAQ
-            </a>
-          </li>
-        </Link>
-
-        <Link to="/Complain">
-          <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faBookOpenReader} className="icon" beat /> Complaints
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faComments} className="icon" beat /> FAQ
             </a>
           </li>
         </Link>
 
-        <Link to="/Log">
+        <Link to                    = "/Complain">
           <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faList} className="icon" beat /> Log
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faBookOpenReader} className="icon" beat /> Complaints
             </a>
           </li>
         </Link>
 
-        <Link to="/ViewComplain">
+        <Link to                    = "/Log">
           <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faExclamationTriangle} className="icon" beat /> View Complain
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faList} className="icon" beat /> Log
             </a>
           </li>
         </Link>
 
-        <Link to="/MobileApp">
+        <Link to                    = "/ViewComplain">
           <li>
-            <a href="#">
-              <FontAwesomeIcon icon={faMobileScreenButton} className="icon" beat /> MobileApp edit
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faExclamationTriangle} className="icon" beat /> View Complain
+            </a>
+          </li>
+        </Link>
+
+        <Link to                    = "/MobileApp">
+          <li>
+            <a href                 = "#">
+              <FontAwesomeIcon icon = {faMobileScreenButton} className="icon" beat /> MobileApp edit
             </a>
           </li>
         </Link>
       </ul>
 
-      <div className="profile-icon" onClick={handleProfileDrawerClick}>
-        <FontAwesomeIcon icon={isProfileDrawerOpen ? faTimes : faUser} beat />
+      <div className                = "profile-icon" onClick={handleProfileDrawerClick}>
+        <FontAwesomeIcon icon       = {isProfileDrawerOpen ? faTimes : faUser} beat />
       </div>
     </nav>
   );
 };
 
 export default Navbar;
+
+*/

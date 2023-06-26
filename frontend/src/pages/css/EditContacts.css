@@ -1,25 +1,429 @@
-.EditContacts-body{
-    position: abs;
-   max-width: 100%;
-   max-height: fit-content;
-   min-height: 500px;
-   ;
-   background-color: antiquewhite; 
+.EditContacts-body {
+  position                    : absolute;
+  max-width                   : 100%;
+  max-height                  : fit-content;
+  min-height                  : 500px;
+  background                  : linear-gradient(45deg, #ffebed 19%, #fbffc7 100%);
+background-size               : 400% 400%;
+animation                     : EditContacts-body 1s ease infinite;
+                
+
+}
+
+@keyframes EditContacts-body {
+                    
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+.EditContacts-container {
+  
+  display                     : flex;
+  align-items                 : center;
+  justify-content             : center;
+  background                  : linear-gradient(45deg, #ffebed 19%, #fbffc7 100%);
+  background-size             : 400% 400%;
+  animation                   : EditContacts-body 1s ease infinite;
+  border-radius               : 10px;
+  box-shadow                  : 0 0 5px rgba(0, 0, 0, 0.2);
+  width                       : 100%;
+  padding                     : 0;
+  margin                      : auto;
+  margin-left                 : 0;
+  min-height                  : 400px;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-language {
+  position                    : absolute;
+
+  top                         : 10;
+  left                        : 32%;
+  display                     : flex;
+  flex-direction              : row;
+  justify-content             : center;
+  color                       : #007bff;
+}
+
+.EditContacts-language-button{
+  background-color            : #033798;
+  border-color                : #2e68a1;
+  border-radius               : 20px;
+  border-width                : 5px;
+  color                       : #ffffff;
+  margin-left                 : 5px;
+  border-radius               : 15px;
+  font-size                   : 20px ;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.EditContacts-language-button:hover{
+  background-color            : #10156e;
+}
+.EditContacts-left-container {
+  width                       : 50%;
+  padding                     : 20px;
+  background                  : linear-gradient(45deg, #d6d6d6 0%, #ffffff 58%);
+background-size               : 400% 400%;
+animation                     : left 1s ease infinite;
+                
+
+  box-shadow                  : 0 0 5px rgba(0, 0, 0, 0.2);
+}
+@keyframes left {
+                    
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+
+.EditContacts-right-container {
+  width                       : 50%;
+  padding                     : 20px;
+  background                  : linear-gradient(45deg, #ffffff 0%, #b3bbff 82%);
+  background-size             : 400% 400%;
+  animation                   : right 1s ease infinite;
+                  
+ 
+  box-shadow                  : 0 0 5px rgba(0, 0, 0, 0.2);
+  min-height                  : 75vh;
+}
+
+@keyframes right {
+                      
+  0% { background-position    : 0% 50%; }
+                    
+  50% { background-position   : 100% 50%; }
+                    
+  100% { background-position  : 0% 50%; }
+                  
+}
+@media (max-width: 768px) {
+  .EditContacts-container {
+    flex-direction            : column;
+  }
+
+  .EditContacts-left-container,
+  .EditContacts-right-container {
+    width                     : 100%;
+    margin-bottom             : 20px;
+    height                    : auto;
+    box-shadow                : 0 10px 10px rgba(0, 0, 0, 0.2);
+  }
 }
 
 
 
 
-.EditContacts-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e7dddd;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    padding: 0px;
-    margin: auto auto; /* This will center the container horizontally */
-    margin-left:0;
-    min-height: 400px;
-  }
+
+
+.EditContacts-input-container {
+  margin-bottom               : 15px;
+  border-radius               : 0px;
+}
+
+.EditContacts-label {
+  display                     : block;
+  font-weight                 : bold;
+  margin-bottom               : 5px;
+  color                       : #f65d5d;
+  font-size                   : 20px;
+  box-shadow                  : 0 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius               : 20px;
+}
+
+.EditContacts-input {
+  width                       : 100%;
+  padding                     : 8px;
+  border                      : 1px solid #cccccc;
+  border-radius               : 20px;
+  background-color            : #f7f7f7;
+  color                       : #333333;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-file-input {
+  display                     : flex;
+  align-items                 : center;
+}
+
+.EditContacts-file-input-icon {
+  color                       : #007bff;
+  cursor                      : pointer;
+  margin-left                 : 10px;
+}
+
+
+
+.EditContacts-contact {
+  margin-bottom               : 15px;
+  padding                     : 10px;
+  background-color            : #f8f8f8;
+  border                      : 1px solid #cccccc;
+  border-radius               : 4px;
+  box-shadow                  : 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-icon {
+  margin-right                : 5px;
+  color                       : #555555;
+}
+
+
+
+.EditContacts-contacts-container {
+  display                     : grid;
+  grid-template-columns       : repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap                    : 20px;
+  padding                     : 20px;
+  border-radius               : 40px;
+  background                  : linear-gradient(45deg, #f0fdff 0%, #66ffd4 82%);
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-left-container {
+  background-color            : #f9f9f9;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-right-container {
+  background-color            : #f9f9f9;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.EditContacts-input-container {
+  display                     : flex;
+  flex-direction              : column;
+  width                       : 350px;
+}
+
+.EditContacts-input {
+  border                      : 2px solid #2c39f6;
+  border-radius               : 20px;
+  padding                     : 10px;
+  width                       : fit-content;
+  color                       : #333333;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-add-button{
+  background-color            : #1869ff;
+  border-color                : #e01d1d;
+  border-radius               : 50px;
+  border-width                : 15px;
+  color                       : #ffffff;
+  padding                     : 10px 15px;
+  border                      : none;
+ font-size                    : 12px;
+  cursor                      : pointer;
+  font-size                   : 16px;
+  font-weight                 : bold;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin-left                 : 40%;
+  
+}
+
+.EditContacts-add-button:hover {
+  background-color            : #041c37;
+}
+
+.EditContacts-contact {
+  font-weight                 : bold;
+
+  color                       : #f0fdff;
+  cursor                      : pointer;
+  border-radius               : 30px;
+  padding                     : 10px;
+  padding-left                : 40px;
+  box-shadow                  : 0 20px 0 rgba(224, 198, 198, 0.1);
+  text-align                  : left;
+  background                  : linear-gradient(45deg, #247bff 9%, #1b1a5b 74%);
+  background-size             : 200% 200%;
+  width                       : 100%;
+  animation                   : card 4s ease infinite;
+  box-shadow                  : 0 20px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.EditContacts-contact:hover {
+  background                  : linear-gradient(45deg, #868593 0%, #373748 92%);
+  box-shadow                  : 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.EditContacts-pagination {
+  display                     : flex;
+  position                    : relative;
+  align-items                 : center;
+  justify-content             : center;
+ 
+ margin-top                   : 10%;
+ margin-left                  : 0;
+}
+
+.EditContacts-pagination-button {
+  padding                     : 8px 16px;
+  margin                      : 0 5px;
+  border                      : none;
+  border-radius               : 15px;
+  background-color            : #4a90e2;
+  color                       : white;
+  cursor                      : pointer;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-pagination-button:hover {
+  background-color            : #3072c4;
+}
+
+.EditContacts-pagination-numbers {
+  display                     : flex;
+  align-items                 : center;
+}
+
+.EditContacts-pagination-number {
+  display                     : inline-block;
+  padding                     : 8px;
+  margin                      : 0 5px;
+  border                      : none;
+  border-radius               : 50%;
+  background-color            : #e4e4e4;
+  color                       : #333333;
+  cursor                      : pointer;
+  transition                  : background-color 0.3s ease;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-pagination-number:hover {
+  background-color            : #d1d1d1;
+}
+
+.EditContacts-pagination-number.active {
+  background-color            : #4a90e2;
+  color                       : white;
+}
+
+.EditContacts-pagination-button[disabled],
+.EditContacts-pagination-number[disabled] {
+  opacity                     : 0.5;
+  cursor                      : not-allowed;
+}
+
+.EditContacts-pagination-button:first-child {
+  margin-left                 : 0;
+}
+
+.EditContacts-pagination-button:last-child {
+  margin-right                : 0;
+}
+
+
+
+.EditContacts-search-bar
+{ display                     : flex;
+  width                       : auto;
+}
+.EditContacts-search-input {
+  position                    : relative;
+  background-color            : #fcfcfc;
+  border-color                : #2e68a1;
+  border-radius               : 20px;
+  border-width                : 5px;
+  background                  : linear-gradient(45deg, #dbdbff 18%, #ffffff 39%, #c3c9ee 88%);
+  padding-left                : 50px;
+  font-size                   : 20px;
+  font-weight                 : bold;
+  width                       : auto;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+ 
+ 
+  animation                   : search 3s ease infinite;
+}
+
+@keyframes search {
+  0% { background-position    : 0% 50%; }
+  50% { background-position   : 100% 50%; }
+  100% { background-position  : 0% 50%; }
+}
+
+.EditContacts-edit-button{
+  background-color            : #4dc372;
+  border-width                : 5px;
+  border-radius               : 20px;
+  margin-right                : 10px;
+  font-size                   : 15px;
+  color                       : #ffebed;
+  font-weight                 : bold;
+  width                       : 100px;
+  border-color                : #185091;
+  cursor                      : pointer;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-edit-button:hover{
+  background-color            : #007d30;
+}
+
+.EditContacts-delete-button{
+  background-color            : #e44f4f;
+  border-width                : 5px;
+  border-radius               : 20px;
+  margin-right                : 10px;
+  font-size                   : 15px;
+  color                       : #ffebed;
+  font-weight                 : bold;
+  width                       : 100px;
+  border-color                : #185091;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.EditContacts-delete-button:hover{
+  background-color            : #911818;
+}
+
+.EditContacts-icon{
+  color                       : #ffffff;
+  
+}
+
+.EditContacts-cancel-button {
+  background-color            : #c44947;
+  border-width                : 5px;
+  border-radius               : 20px;
+  margin-right                : 10px;
+  font-size                   : 15px;
+  color                       : #ffebed;
+  font-weight                 : bold;
+  width                       : 100px;
+  border-color                : #185091;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.EditContacts-cancel-button:hover{
+  background-color            : #830d0d;
+}
+
+.EditContacts-update-button{
+  background-color            : #da7b44;
+  border-width                : 5px;
+  border-radius               : 20px;
+  margin-right                : 10px;
+  font-size                   : 15px;
+  color                       : #ffebed;
+  font-weight                 : bold;
+  width                       : 120px;
+  border-color                : #185091;
+  box-shadow                  : 0 10px 10px rgba(0, 0, 0, 0.2);
+
+}
+.EditContacts-update-button:hover{
+  background-color            : #a55006;
+}

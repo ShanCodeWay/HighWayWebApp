@@ -1,46 +1,46 @@
 .home-container {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+    background-color    : #f2f2f2;
+    padding             : 20px;
+    border-radius       : 5px;
+    text-align          : center;
   }
   
   .home-title {
-    font-size: 24px;
-    color: #333;
+    font-size           : 24px;
+    color               : #333;
   }
   
   .home-content {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
+    font-size           : 16px;
+    color               : #666;
+    margin-bottom       : 20px;
   }
   
   .home-button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+    background-color    : #4caf50;
+    color               : #fff;
+    border              : none;
+    padding             : 10px 20px;
+    font-size           : 16px;
+    cursor              : pointer;
+    border-radius       : 5px;
   }
   
 .container {
-  display                   : flex;
-  flex-wrap                 : wrap;
-  background-color          : #de6161;
-  color                     : #1c1515;
-  border-radius             : 0;
-  margin                    : 0;
-  justify-content           : center;
-  margin-top                : 0;
-  margin-bottom             : 0%;
+  display               : flex;
+  flex-wrap             : wrap;
+  background-color      : #1fdb55;
+  color                 : #1a1c15;
+  border-radius         : 0;
+  margin                : 0;
+  justify-content       : center;
+  margin-top            : 0;
+  margin-bottom         : 0%;
   
 }
 .main {
-  background-color: #35d963;
-  display: flex;
-  flex-direction: column;
-  min-height: 50vh;
+  background-color      : #35d963;
+  display               : flex;
+  flex-direction        : column;
+  min-height            : 50vh;
 }
