@@ -63,6 +63,11 @@ animation                     : EditContacts-body 1s ease infinite;
 .EditContacts-language-button:hover{
   background-color            : #10156e;
 }
+
+.EditContacts-language-button.active{
+  background-color            : #4887fb;
+}
+
 .EditContacts-left-container {
   width                       : 50%;
   padding                     : 20px;

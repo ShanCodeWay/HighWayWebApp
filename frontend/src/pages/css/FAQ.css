@@ -362,6 +362,11 @@ animation                         : animationName 3s ease infinite;
   .faq-language-button:hover{
     background-color              : #10156e;
   }
+
+  .faq-language-button.active {
+    background-color: rgb(7, 199, 247);
+    color: #fff;
+  }
   
 
   

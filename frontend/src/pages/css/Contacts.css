@@ -335,3 +335,7 @@ animation                           : animationName 1s ease infinite;
   .contacts-language-button:hover{
     background-color                : #10156e;
   }
+
+  .contacts-language-button.active {
+    background-color                : #a7aaec;
+  }

@@ -142,6 +142,10 @@
   background-color            : #10156e;
 }
 
+.Editfaq-language-button.active {
+  background-color            : #4b54f9;
+}
+
 .Editfaq-pagination {
   display                     : flex;
   position                    : relative;
